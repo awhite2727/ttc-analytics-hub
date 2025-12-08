@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: gtfs_raw
+    schema: main
+    tables:
+      - name: stops
+        external:
+          location: "../backend/data/gtfs_raw/stops.csv"
+          format: csv
+
+      - name: routes
+        external:
+          location: "../backend/data/gtfs_raw/routes.csv"
+          format: csv
+
+      - name: trips
+        external:
+          location: "../backend/data/gtfs_raw/trips.csv"
+          format: csv
+
+      - name: stop_times
+        external:
+          location: "../backend/data/gtfs_raw/stop_times.csv"
+          format: csv
+
+      - name: shapes
+        external:
+          location: "../backend/data/gtfs_raw/shapes.csv"
+          format: csv
