@@ -4,27 +4,27 @@ sources:
   - name: gtfs_raw
     schema: main
     tables:
-      - name: stops
-        external:
-          location: "../backend/data/gtfs_raw/stops.csv"
-          format: csv
-
       - name: routes
-        external:
-          location: "../backend/data/gtfs_raw/routes.csv"
-          format: csv
+        description: "Raw static routes data from GTFS"
+        config:
+          external_location: "../backend/data/gtfs_raw/static_routes.csv"
 
       - name: trips
-        external:
-          location: "../backend/data/gtfs_raw/trips.csv"
-          format: csv
+        description: "Raw static trips data from GTFS"
+        config:
+          external_location: "../backend/data/gtfs_raw/static_trips.csv"
 
       - name: stop_times
-        external:
-          location: "../backend/data/gtfs_raw/stop_times.csv"
-          format: csv
+        description: "Raw static stop times data from GTFS"
+        config:
+          external_location: "../backend/data/gtfs_raw/static_stop_times.csv"
 
       - name: shapes
-        external:
-          location: "../backend/data/gtfs_raw/shapes.csv"
-          format: csv
+        description: "Raw static shapes data from GTFS"
+        config:
+          external_location: "../backend/data/gtfs_raw/static_shapes.csv"
+        
+      - name: stops
+        description: "Raw static stops data from GTFS"
+        config:
+          external_location: "../backend/data/gtfs_raw/static_stops.csv"
