@@ -2,3 +2,5 @@ backend/venv/
 backend/config/
 backend/data/gtfs_raw/
 backend/data/realtime/
+warehouse/venv2
+warehouse/config
