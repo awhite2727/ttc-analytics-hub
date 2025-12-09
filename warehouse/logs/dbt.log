@@ -3805,3 +3805,1368 @@ alter table "analytics"."main"."stg_trips__dbt_tmp" rename to "stg_trips"
 [0m17:47:09.993549 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001669610B290>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000166949C5610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000166967EBBF0>]}
 [0m17:47:09.993839 [debug] [MainThread]: Flushing usage events
 [0m17:47:10.418465 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:11:42.684550 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6A89C6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6B0711D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6B6D3ED0>]}
+
+
+============================== 18:11:42.688512 | 0986ec1c-88fb-40fa-bdf7-c6222851e84e ==============================
+[0m18:11:42.688512 [info ] [MainThread]: Running with dbt=1.10.15
+[0m18:11:42.689094 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Adam White\\.dbt', 'invocation_command': 'dbt test', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Adam White\\Desktop\\ttc-analytics-hub\\warehouse\\logs'}
+[0m18:11:42.862762 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6AA3C9D0>]}
+[0m18:11:42.909229 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6B7F97B0>]}
+[0m18:11:42.911590 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m18:11:43.135169 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m18:11:43.249198 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:11:43.249984 [debug] [MainThread]: Partial parsing: updated file: ttc_analytics://models\sources.yml
+[0m18:11:43.608325 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m18:11:43.608981 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6CC05650>]}
+[0m18:11:43.676833 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ttc_analytics.marts
+- models.ttc_analytics.intermediate
+[0m18:11:43.685582 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6CE65220>]}
+[0m18:11:43.746803 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m18:11:43.748996 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m18:11:43.778408 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6CA0EC10>]}
+[0m18:11:43.778770 [info ] [MainThread]: Found 5 models, 12 data tests, 5 sources, 468 macros
+[0m18:11:43.779165 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6D0FA000>]}
+[0m18:11:43.781174 [info ] [MainThread]: 
+[0m18:11:43.781566 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:11:43.781913 [info ] [MainThread]: 
+[0m18:11:43.782345 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:11:43.786171 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m18:11:43.855273 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m18:11:43.855632 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m18:11:43.855861 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:11:43.867833 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m18:11:43.868092 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m18:11:43.868322 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m18:11:43.878827 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m18:11:43.879844 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m18:11:43.880684 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main'
+[0m18:11:43.880918 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m18:11:43.882142 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '0986ec1c-88fb-40fa-bdf7-c6222851e84e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6D124290>]}
+[0m18:11:43.882482 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:11:43.882699 [debug] [MainThread]: On master: BEGIN
+[0m18:11:43.882899 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:11:43.883348 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:11:43.883640 [debug] [MainThread]: On master: COMMIT
+[0m18:11:43.883907 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:11:43.884113 [debug] [MainThread]: On master: COMMIT
+[0m18:11:43.884445 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:11:43.884669 [debug] [MainThread]: On master: Close
+[0m18:11:43.887715 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:11:43.888052 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:11:43.888338 [debug] [Thread-4 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:11:43.888616 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:11:43.888900 [info ] [Thread-3 (]: 3 of 12 START test source_not_null_gtfs_raw_shapes_shape_pt_sequence ........... [RUN]
+[0m18:11:43.889166 [info ] [Thread-1 (]: 1 of 12 START test source_not_null_gtfs_raw_routes_route_id .................... [RUN]
+[0m18:11:43.890157 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f'
+[0m18:11:43.890517 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0'
+[0m18:11:43.889489 [info ] [Thread-4 (]: 4 of 12 START test source_not_null_gtfs_raw_stop_times_stop_sequence ........... [RUN]
+[0m18:11:43.890881 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:11:43.891166 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:11:43.889754 [info ] [Thread-2 (]: 2 of 12 START test source_not_null_gtfs_raw_shapes_shape_id .................... [RUN]
+[0m18:11:43.891646 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c'
+[0m18:11:43.901146 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:11:43.903740 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:11:43.904138 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d'
+[0m18:11:43.904480 [debug] [Thread-4 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:11:43.904984 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:11:43.909878 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:11:43.910356 [debug] [Thread-4 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:11:43.910822 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:11:43.923135 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:11:43.923507 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:11:43.925545 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:11:43.926057 [debug] [Thread-4 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:11:43.927378 [debug] [Thread-4 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:11:43.927730 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:11:43.929329 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:11:43.929879 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:11:43.930164 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: BEGIN
+[0m18:11:43.930423 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:11:43.930705 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:11:43.931383 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: BEGIN
+[0m18:11:43.931650 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:11:43.931940 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:11:43.932218 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m18:11:43.932497 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:11:43.932848 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: BEGIN
+[0m18:11:43.933127 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:11:43.933390 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:11:43.933640 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: BEGIN
+[0m18:11:43.933905 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:11:43.934212 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select shape_pt_sequence
+from '../backend/data/gtfs_raw/static_shapes.csv'
+where shape_pt_sequence is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:43.934533 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:11:43.934853 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:11:43.935375 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select route_id
+from '../backend/data/gtfs_raw/static_routes.csv'
+where route_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:43.935686 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m18:11:43.936238 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:11:43.936519 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m18:11:43.936827 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select stop_sequence
+from '../backend/data/gtfs_raw/static_stop_times.csv'
+where stop_sequence is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:43.937115 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:11:43.937483 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select shape_id
+from '../backend/data/gtfs_raw/static_shapes.csv'
+where shape_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:43.943819 [debug] [Thread-1 (]: SQL status: OK in 0.008 seconds
+[0m18:11:43.948280 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: ROLLBACK
+[0m18:11:43.949025 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0'
+[0m18:11:43.949298 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: Close
+[0m18:11:43.949777 [info ] [Thread-1 (]: 1 of 12 PASS source_not_null_gtfs_raw_routes_route_id .......................... [[32mPASS[0m in 0.06s]
+[0m18:11:43.950416 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:11:43.950779 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:11:43.951173 [info ] [Thread-1 (]: 5 of 12 START test source_not_null_gtfs_raw_stop_times_trip_id ................. [RUN]
+[0m18:11:43.951600 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0, now test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c)
+[0m18:11:43.951876 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:11:43.954831 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:11:43.955690 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:11:43.957124 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:11:43.957917 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:11:43.958185 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: BEGIN
+[0m18:11:43.958425 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:11:43.958956 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:11:43.959220 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:11:43.959473 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from '../backend/data/gtfs_raw/static_stop_times.csv'
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:43.996438 [debug] [Thread-3 (]: SQL status: OK in 0.061 seconds
+[0m18:11:43.999960 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: ROLLBACK
+[0m18:11:44.000879 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f'
+[0m18:11:44.001226 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: Close
+[0m18:11:44.001877 [info ] [Thread-3 (]: 3 of 12 PASS source_not_null_gtfs_raw_shapes_shape_pt_sequence ................. [[32mPASS[0m in 0.11s]
+[0m18:11:44.002737 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:11:44.003229 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:11:44.003759 [info ] [Thread-3 (]: 6 of 12 START test source_not_null_gtfs_raw_stops_stop_id ...................... [RUN]
+[0m18:11:44.004414 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f, now test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d)
+[0m18:11:44.004785 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:11:44.010024 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:11:44.011551 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:11:44.014454 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:11:44.015043 [debug] [Thread-2 (]: SQL status: OK in 0.077 seconds
+[0m18:11:44.016310 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:11:44.016867 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: BEGIN
+[0m18:11:44.017394 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:11:44.018277 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.018667 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:11:44.019093 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select stop_id
+from '../backend/data/gtfs_raw/static_stops.csv'
+where stop_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.020936 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: ROLLBACK
+[0m18:11:44.021940 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d'
+[0m18:11:44.022500 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: Close
+[0m18:11:44.023349 [info ] [Thread-2 (]: 2 of 12 PASS source_not_null_gtfs_raw_shapes_shape_id .......................... [[32mPASS[0m in 0.12s]
+[0m18:11:44.024513 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:11:44.024996 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:11:44.025552 [info ] [Thread-2 (]: 7 of 12 START test source_not_null_gtfs_raw_trips_trip_id ...................... [RUN]
+[0m18:11:44.026244 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d, now test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6)
+[0m18:11:44.026688 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:11:44.032141 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:11:44.034511 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:11:44.036977 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:11:44.038032 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:11:44.038480 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: BEGIN
+[0m18:11:44.038898 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:11:44.039655 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.040085 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:11:44.040512 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from '../backend/data/gtfs_raw/static_trips.csv'
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.083386 [debug] [Thread-3 (]: SQL status: OK in 0.062 seconds
+[0m18:11:44.085938 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: ROLLBACK
+[0m18:11:44.087072 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d'
+[0m18:11:44.087688 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: Close
+[0m18:11:44.088589 [info ] [Thread-3 (]: 6 of 12 PASS source_not_null_gtfs_raw_stops_stop_id ............................ [[32mPASS[0m in 0.08s]
+[0m18:11:44.089886 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:11:44.090711 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:11:44.091296 [info ] [Thread-3 (]: 8 of 12 START test source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_  [RUN]
+[0m18:11:44.091968 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d, now test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded)
+[0m18:11:44.092461 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:11:44.099279 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:11:44.100650 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:11:44.104252 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:11:44.105866 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:11:44.106486 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: BEGIN
+[0m18:11:44.107035 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:11:44.108109 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.108659 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:11:44.109197 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select trip_id as from_field
+    from '../backend/data/gtfs_raw/static_stop_times.csv'
+    where trip_id is not null
+),
+
+parent as (
+    select trip_id as to_field
+    from '../backend/data/gtfs_raw/static_trips.csv'
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.117511 [debug] [Thread-4 (]: SQL status: OK in 0.180 seconds
+[0m18:11:44.123503 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: ROLLBACK
+[0m18:11:44.124342 [debug] [Thread-4 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c'
+[0m18:11:44.124790 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: Close
+[0m18:11:44.125620 [info ] [Thread-4 (]: 4 of 12 PASS source_not_null_gtfs_raw_stop_times_stop_sequence ................. [[32mPASS[0m in 0.23s]
+[0m18:11:44.133930 [debug] [Thread-4 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:11:44.134451 [debug] [Thread-4 (]: Began running node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:11:44.135009 [info ] [Thread-4 (]: 9 of 12 START test source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_  [RUN]
+[0m18:11:44.139086 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c, now test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60)
+[0m18:11:44.139569 [debug] [Thread-4 (]: Began compiling node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:11:44.146013 [debug] [Thread-4 (]: Writing injected SQL for node "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:11:44.147239 [debug] [Thread-4 (]: Began executing node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:11:44.150374 [debug] [Thread-4 (]: Writing runtime sql for node "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:11:44.159744 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:11:44.160220 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: BEGIN
+[0m18:11:44.160632 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:11:44.161382 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.161809 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:11:44.162256 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select route_id as from_field
+    from '../backend/data/gtfs_raw/static_trips.csv'
+    where route_id is not null
+),
+
+parent as (
+    select route_id as to_field
+    from '../backend/data/gtfs_raw/static_routes.csv'
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.175790 [debug] [Thread-2 (]: SQL status: OK in 0.135 seconds
+[0m18:11:44.178755 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: ROLLBACK
+[0m18:11:44.179633 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6'
+[0m18:11:44.180076 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: Close
+[0m18:11:44.180788 [info ] [Thread-2 (]: 7 of 12 PASS source_not_null_gtfs_raw_trips_trip_id ............................ [[32mPASS[0m in 0.15s]
+[0m18:11:44.181522 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:11:44.181882 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:11:44.182266 [info ] [Thread-2 (]: 10 of 12 START test source_unique_gtfs_raw_routes_route_id ..................... [RUN]
+[0m18:11:44.182829 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6, now test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743)
+[0m18:11:44.183206 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:11:44.190726 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:11:44.191852 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:11:44.193590 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:11:44.194437 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:11:44.194732 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: BEGIN
+[0m18:11:44.195000 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:11:44.195605 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.195892 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:11:44.196169 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    route_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_routes.csv'
+where route_id is not null
+group by route_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.208446 [debug] [Thread-1 (]: SQL status: OK in 0.249 seconds
+[0m18:11:44.209112 [debug] [Thread-2 (]: SQL status: OK in 0.013 seconds
+[0m18:11:44.210799 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: ROLLBACK
+[0m18:11:44.211509 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743'
+[0m18:11:44.212802 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: ROLLBACK
+[0m18:11:44.213129 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: Close
+[0m18:11:44.213690 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c'
+[0m18:11:44.214424 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: Close
+[0m18:11:44.214169 [info ] [Thread-2 (]: 10 of 12 PASS source_unique_gtfs_raw_routes_route_id ........................... [[32mPASS[0m in 0.03s]
+[0m18:11:44.214967 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:11:44.215644 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:11:44.215372 [info ] [Thread-1 (]: 5 of 12 PASS source_not_null_gtfs_raw_stop_times_trip_id ....................... [[32mPASS[0m in 0.26s]
+[0m18:11:44.216551 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:11:44.216064 [info ] [Thread-2 (]: 11 of 12 START test source_unique_gtfs_raw_stops_stop_id ....................... [RUN]
+[0m18:11:44.217275 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:11:44.217618 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743, now test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663)
+[0m18:11:44.218165 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:11:44.217916 [info ] [Thread-1 (]: 12 of 12 START test source_unique_gtfs_raw_trips_trip_id ....................... [RUN]
+[0m18:11:44.221805 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:11:44.222184 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c, now test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845)
+[0m18:11:44.222561 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:11:44.225481 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:11:44.226079 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:11:44.232336 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:11:44.233001 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:11:44.234774 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:11:44.235363 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:11:44.235671 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: BEGIN
+[0m18:11:44.235941 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:11:44.236519 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:11:44.236821 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: BEGIN
+[0m18:11:44.237110 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.237389 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:11:44.237677 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:11:44.238093 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    stop_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_stops.csv'
+where stop_id is not null
+group by stop_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.238686 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:11:44.238999 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:11:44.239279 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trip_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_trips.csv'
+where trip_id is not null
+group by trip_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:11:44.252725 [debug] [Thread-4 (]: SQL status: OK in 0.090 seconds
+[0m18:11:44.255151 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: ROLLBACK
+[0m18:11:44.255825 [debug] [Thread-4 (]: Failed to rollback 'test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60'
+[0m18:11:44.256152 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: Close
+[0m18:11:44.256735 [info ] [Thread-4 (]: 9 of 12 PASS source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_  [[32mPASS[0m in 0.12s]
+[0m18:11:44.257469 [debug] [Thread-4 (]: Finished running node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:11:44.272192 [debug] [Thread-2 (]: SQL status: OK in 0.034 seconds
+[0m18:11:44.274004 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: ROLLBACK
+[0m18:11:44.274677 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663'
+[0m18:11:44.274992 [debug] [Thread-2 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: Close
+[0m18:11:44.275512 [info ] [Thread-2 (]: 11 of 12 PASS source_unique_gtfs_raw_stops_stop_id ............................. [[32mPASS[0m in 0.06s]
+[0m18:11:44.276242 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:11:44.359237 [debug] [Thread-1 (]: SQL status: OK in 0.119 seconds
+[0m18:11:44.361886 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: ROLLBACK
+[0m18:11:44.363045 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845'
+[0m18:11:44.363763 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: Close
+[0m18:11:44.364492 [info ] [Thread-1 (]: 12 of 12 PASS source_unique_gtfs_raw_trips_trip_id ............................. [[32mPASS[0m in 0.14s]
+[0m18:11:44.365629 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:11:44.405256 [debug] [Thread-3 (]: SQL status: OK in 0.295 seconds
+[0m18:11:44.409065 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: ROLLBACK
+[0m18:11:44.409664 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded'
+[0m18:11:44.409942 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: Close
+[0m18:11:44.410424 [info ] [Thread-3 (]: 8 of 12 PASS source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_  [[32mPASS[0m in 0.32s]
+[0m18:11:44.411090 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:11:44.412222 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:11:44.412478 [debug] [MainThread]: On master: BEGIN
+[0m18:11:44.412696 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:11:44.413172 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:11:44.413406 [debug] [MainThread]: On master: COMMIT
+[0m18:11:44.413620 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:11:44.413858 [debug] [MainThread]: On master: COMMIT
+[0m18:11:44.414225 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:11:44.414458 [debug] [MainThread]: On master: Close
+[0m18:11:44.414729 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:11:44.414945 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m18:11:44.415128 [debug] [MainThread]: Connection 'test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded' was properly closed.
+[0m18:11:44.415339 [debug] [MainThread]: Connection 'test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845' was properly closed.
+[0m18:11:44.415525 [debug] [MainThread]: Connection 'test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60' was properly closed.
+[0m18:11:44.415725 [debug] [MainThread]: Connection 'test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663' was properly closed.
+[0m18:11:44.416146 [info ] [MainThread]: 
+[0m18:11:44.416487 [info ] [MainThread]: Finished running 12 data tests in 0 hours 0 minutes and 0.63 seconds (0.63s).
+[0m18:11:44.418359 [debug] [MainThread]: Command end result
+[0m18:11:44.437534 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m18:11:44.439780 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m18:11:44.445923 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\run_results.json
+[0m18:11:44.446209 [info ] [MainThread]: 
+[0m18:11:44.446581 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:11:44.446913 [info ] [MainThread]: 
+[0m18:11:44.447307 [info ] [MainThread]: Done. PASS=12 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=12
+[0m18:11:44.447888 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:11:44.448897 [debug] [MainThread]: Command `dbt test` succeeded at 18:11:44.448786 after 1.86 seconds
+[0m18:11:44.449222 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6D0E68E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6E58BBB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001FE6E58BD90>]}
+[0m18:11:44.449503 [debug] [MainThread]: Flushing usage events
+[0m18:11:44.811088 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:14:49.546376 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BD32C6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BDB011D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BE163ED0>]}
+
+
+============================== 18:14:49.550192 | f4ca41c9-126c-4be7-adc7-cf8319a098e6 ==============================
+[0m18:14:49.550192 [info ] [MainThread]: Running with dbt=1.10.15
+[0m18:14:49.550757 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Adam White\\.dbt', 'indirect_selection': 'eager', 'invocation_command': 'dbt test', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Adam White\\Desktop\\ttc-analytics-hub\\warehouse\\logs'}
+[0m18:14:49.723234 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BD4D89D0>]}
+[0m18:14:49.768855 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BF2597B0>]}
+[0m18:14:49.771280 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m18:14:50.002633 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m18:14:50.133306 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m18:14:50.134174 [debug] [MainThread]: Partial parsing: updated file: ttc_analytics://models\sources.yml
+[0m18:14:50.464464 [warn ] [MainThread]: [[33mWARNING[0m][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships`. Arguments to generic tests
+should be nested under the `arguments` property.`
+[0m18:14:50.465064 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'deprecation', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'property_': 'warn', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BF705B50>]}
+[0m18:14:50.535426 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.ttc_analytics.marts
+- models.ttc_analytics.intermediate
+[0m18:14:50.544259 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BF9824E0>]}
+[0m18:14:50.604710 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m18:14:50.606874 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m18:14:50.637171 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BE1A5FD0>]}
+[0m18:14:50.637581 [info ] [MainThread]: Found 5 models, 13 data tests, 5 sources, 468 macros
+[0m18:14:50.637984 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BFBF2340>]}
+[0m18:14:50.639868 [info ] [MainThread]: 
+[0m18:14:50.640225 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m18:14:50.640563 [info ] [MainThread]: 
+[0m18:14:50.641006 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m18:14:50.644880 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m18:14:50.721954 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m18:14:50.722291 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m18:14:50.722518 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m18:14:50.734147 [debug] [ThreadPool]: SQL status: OK in 0.012 seconds
+[0m18:14:50.734445 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m18:14:50.734681 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m18:14:50.745142 [debug] [ThreadPool]: SQL status: OK in 0.010 seconds
+[0m18:14:50.746156 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m18:14:50.747016 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main'
+[0m18:14:50.747251 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m18:14:50.748512 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'f4ca41c9-126c-4be7-adc7-cf8319a098e6', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BFC281D0>]}
+[0m18:14:50.748917 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:14:50.749134 [debug] [MainThread]: On master: BEGIN
+[0m18:14:50.749335 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:14:50.749736 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:14:50.749963 [debug] [MainThread]: On master: COMMIT
+[0m18:14:50.750172 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:14:50.750380 [debug] [MainThread]: On master: COMMIT
+[0m18:14:50.750715 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:14:50.750935 [debug] [MainThread]: On master: Close
+[0m18:14:50.753901 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:14:50.754225 [debug] [Thread-4 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:14:50.754545 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:14:50.754836 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:14:50.755147 [info ] [Thread-1 (]: 1 of 13 START test source_not_null_gtfs_raw_routes_route_id .................... [RUN]
+[0m18:14:50.755446 [info ] [Thread-4 (]: 4 of 13 START test source_not_null_gtfs_raw_stop_times_stop_sequence ........... [RUN]
+[0m18:14:50.756475 [debug] [Thread-1 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0'
+[0m18:14:50.756886 [debug] [Thread-4 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c'
+[0m18:14:50.755805 [info ] [Thread-3 (]: 3 of 13 START test source_not_null_gtfs_raw_shapes_shape_pt_sequence ........... [RUN]
+[0m18:14:50.757314 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:14:50.756072 [info ] [Thread-2 (]: 2 of 13 START test source_not_null_gtfs_raw_shapes_shape_id .................... [RUN]
+[0m18:14:50.757648 [debug] [Thread-4 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:14:50.757988 [debug] [Thread-3 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f'
+[0m18:14:50.767623 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:14:50.768007 [debug] [Thread-2 (]: Acquiring new duckdb connection 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d'
+[0m18:14:50.770646 [debug] [Thread-4 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:14:50.770957 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:14:50.771320 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:14:50.774314 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:14:50.776972 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:14:50.777480 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:14:50.789636 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:14:50.790297 [debug] [Thread-4 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:14:50.790630 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:14:50.790905 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:14:50.792382 [debug] [Thread-4 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:14:50.793731 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:14:50.795223 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:14:50.795549 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:14:50.796082 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: BEGIN
+[0m18:14:50.796440 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m18:14:50.797288 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:14:50.797597 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:14:50.797882 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:14:50.798146 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m18:14:50.798398 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: BEGIN
+[0m18:14:50.798671 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: BEGIN
+[0m18:14:50.798941 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: BEGIN
+[0m18:14:50.799204 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"
+[0m18:14:50.799462 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m18:14:50.799734 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m18:14:50.800003 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m18:14:50.800277 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select route_id
+from '../backend/data/gtfs_raw/static_routes.csv'
+where route_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.800897 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.801194 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.801447 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.801821 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"
+[0m18:14:50.802101 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"
+[0m18:14:50.802372 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"
+[0m18:14:50.802661 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select stop_sequence
+from '../backend/data/gtfs_raw/static_stop_times.csv'
+where stop_sequence is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.802953 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select shape_id
+from '../backend/data/gtfs_raw/static_shapes.csv'
+where shape_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.803243 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select shape_pt_sequence
+from '../backend/data/gtfs_raw/static_shapes.csv'
+where shape_pt_sequence is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.810635 [debug] [Thread-1 (]: SQL status: OK in 0.009 seconds
+[0m18:14:50.815532 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: ROLLBACK
+[0m18:14:50.816374 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0'
+[0m18:14:50.816647 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0: Close
+[0m18:14:50.817157 [info ] [Thread-1 (]: 1 of 13 PASS source_not_null_gtfs_raw_routes_route_id .......................... [[32mPASS[0m in 0.06s]
+[0m18:14:50.817902 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0
+[0m18:14:50.818316 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:14:50.818724 [info ] [Thread-1 (]: 5 of 13 START test source_not_null_gtfs_raw_stop_times_trip_id ................. [RUN]
+[0m18:14:50.819149 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_routes_route_id.544219e4b0, now test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c)
+[0m18:14:50.819436 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:14:50.822370 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:14:50.823180 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:14:50.824597 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:14:50.825281 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:14:50.825554 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: BEGIN
+[0m18:14:50.825797 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:14:50.826328 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.826594 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"
+[0m18:14:50.826845 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from '../backend/data/gtfs_raw/static_stop_times.csv'
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.860496 [debug] [Thread-3 (]: SQL status: OK in 0.056 seconds
+[0m18:14:50.863615 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: ROLLBACK
+[0m18:14:50.864105 [debug] [Thread-2 (]: SQL status: OK in 0.060 seconds
+[0m18:14:50.864621 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f'
+[0m18:14:50.864978 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f: Close
+[0m18:14:50.866841 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: ROLLBACK
+[0m18:14:50.865602 [info ] [Thread-3 (]: 3 of 13 PASS source_not_null_gtfs_raw_shapes_shape_pt_sequence ................. [[32mPASS[0m in 0.11s]
+[0m18:14:50.867451 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f
+[0m18:14:50.867893 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d'
+[0m18:14:50.868234 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:14:50.868620 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d: Close
+[0m18:14:50.868985 [info ] [Thread-3 (]: 6 of 13 START test source_not_null_gtfs_raw_stops_stop_id ...................... [RUN]
+[0m18:14:50.869884 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_pt_sequence.b5248a2b6f, now test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d)
+[0m18:14:50.869575 [info ] [Thread-2 (]: 2 of 13 PASS source_not_null_gtfs_raw_shapes_shape_id .......................... [[32mPASS[0m in 0.10s]
+[0m18:14:50.870384 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:14:50.870975 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d
+[0m18:14:50.875705 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:14:50.876149 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:14:50.876787 [info ] [Thread-2 (]: 7 of 13 START test source_not_null_gtfs_raw_trips_trip_id ...................... [RUN]
+[0m18:14:50.877435 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_shapes_shape_id.381cd2e25d, now test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6)
+[0m18:14:50.878246 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:14:50.882423 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:14:50.883117 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:14:50.885746 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:14:50.887081 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:14:50.889948 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:14:50.891064 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:14:50.891494 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: BEGIN
+[0m18:14:50.891879 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:14:50.892777 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.893202 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"
+[0m18:14:50.893610 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select trip_id
+from '../backend/data/gtfs_raw/static_trips.csv'
+where trip_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.902846 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:14:50.903454 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: BEGIN
+[0m18:14:50.903846 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:14:50.904662 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m18:14:50.905073 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"
+[0m18:14:50.905487 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select stop_id
+from '../backend/data/gtfs_raw/static_stops.csv'
+where stop_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:50.968649 [debug] [Thread-3 (]: SQL status: OK in 0.063 seconds
+[0m18:14:50.971307 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: ROLLBACK
+[0m18:14:50.972424 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d'
+[0m18:14:50.972967 [debug] [Thread-3 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d: Close
+[0m18:14:50.973804 [info ] [Thread-3 (]: 6 of 13 PASS source_not_null_gtfs_raw_stops_stop_id ............................ [[32mPASS[0m in 0.10s]
+[0m18:14:50.974787 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d
+[0m18:14:50.975323 [debug] [Thread-3 (]: Began running node test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9
+[0m18:14:50.982436 [debug] [Thread-4 (]: SQL status: OK in 0.179 seconds
+[0m18:14:50.975888 [info ] [Thread-3 (]: 8 of 13 START test source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_  [RUN]
+[0m18:14:50.983305 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stops_stop_id.f49074d83d, now test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9)
+[0m18:14:50.983817 [debug] [Thread-3 (]: Began compiling node test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9
+[0m18:14:50.989906 [debug] [Thread-3 (]: Writing injected SQL for node "test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9"
+[0m18:14:50.991766 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: ROLLBACK
+[0m18:14:50.992701 [debug] [Thread-4 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c'
+[0m18:14:50.993158 [debug] [Thread-4 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c: Close
+[0m18:14:50.994453 [debug] [Thread-3 (]: Began executing node test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9
+[0m18:14:50.997831 [debug] [Thread-3 (]: Writing runtime sql for node "test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9"
+[0m18:14:50.993916 [info ] [Thread-4 (]: 4 of 13 PASS source_not_null_gtfs_raw_stop_times_stop_sequence ................. [[32mPASS[0m in 0.24s]
+[0m18:14:50.998746 [debug] [Thread-4 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c
+[0m18:14:50.999219 [debug] [Thread-4 (]: Began running node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:14:51.001249 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9"
+[0m18:14:51.001688 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9: BEGIN
+[0m18:14:51.002087 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m18:14:51.000220 [info ] [Thread-4 (]: 9 of 13 START test source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_  [RUN]
+[0m18:14:51.002954 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stop_times_stop_sequence.4758b90d4c, now test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded)
+[0m18:14:51.003408 [debug] [Thread-4 (]: Began compiling node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:14:51.003977 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m18:14:51.010040 [debug] [Thread-4 (]: Writing injected SQL for node "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:14:51.010532 [debug] [Thread-3 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9"
+[0m18:14:51.011115 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select shape_id as from_field
+    from '../backend/data/gtfs_raw/static_shapes.csv'
+    where shape_id is not null
+),
+
+parent as (
+    select shape_id as to_field
+    from '../backend/data/gtfs_raw/static_trips.csv'
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.012110 [debug] [Thread-4 (]: Began executing node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:14:51.015375 [debug] [Thread-4 (]: Writing runtime sql for node "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:14:51.017071 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:14:51.017564 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: BEGIN
+[0m18:14:51.017987 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m18:14:51.018831 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m18:14:51.019272 [debug] [Thread-4 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"
+[0m18:14:51.019736 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select trip_id as from_field
+    from '../backend/data/gtfs_raw/static_stop_times.csv'
+    where trip_id is not null
+),
+
+parent as (
+    select trip_id as to_field
+    from '../backend/data/gtfs_raw/static_trips.csv'
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.056148 [debug] [Thread-2 (]: SQL status: OK in 0.162 seconds
+[0m18:14:51.060247 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: ROLLBACK
+[0m18:14:51.061461 [debug] [Thread-1 (]: SQL status: OK in 0.234 seconds
+[0m18:14:51.061996 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6'
+[0m18:14:51.062357 [debug] [Thread-2 (]: On test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6: Close
+[0m18:14:51.064038 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: ROLLBACK
+[0m18:14:51.062906 [info ] [Thread-2 (]: 7 of 13 PASS source_not_null_gtfs_raw_trips_trip_id ............................ [[32mPASS[0m in 0.19s]
+[0m18:14:51.064662 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6
+[0m18:14:51.065080 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c'
+[0m18:14:51.065414 [debug] [Thread-2 (]: Began running node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:14:51.065739 [debug] [Thread-1 (]: On test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c: Close
+[0m18:14:51.066048 [info ] [Thread-2 (]: 10 of 13 START test source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_  [RUN]
+[0m18:14:51.066884 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_trips_trip_id.190ae59ad6, now test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60)
+[0m18:14:51.066595 [info ] [Thread-1 (]: 5 of 13 PASS source_not_null_gtfs_raw_stop_times_trip_id ....................... [[32mPASS[0m in 0.25s]
+[0m18:14:51.067275 [debug] [Thread-2 (]: Began compiling node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:14:51.067681 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c
+[0m18:14:51.071528 [debug] [Thread-2 (]: Writing injected SQL for node "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:14:51.071885 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:14:51.072356 [info ] [Thread-1 (]: 11 of 13 START test source_unique_gtfs_raw_routes_route_id ..................... [RUN]
+[0m18:14:51.072982 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_not_null_gtfs_raw_stop_times_trip_id.da8230043c, now test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743)
+[0m18:14:51.073640 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:14:51.078450 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:14:51.078978 [debug] [Thread-2 (]: Began executing node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:14:51.084888 [debug] [Thread-2 (]: Writing runtime sql for node "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:14:51.085440 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:14:51.086789 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:14:51.087331 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:14:51.087635 [debug] [Thread-2 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: BEGIN
+[0m18:14:51.087910 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m18:14:51.088564 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:14:51.088846 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: BEGIN
+[0m18:14:51.089136 [debug] [Thread-2 (]: SQL status: OK in 0.001 seconds
+[0m18:14:51.089453 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:14:51.089749 [debug] [Thread-2 (]: Using duckdb connection "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"
+[0m18:14:51.090203 [debug] [Thread-2 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select route_id as from_field
+    from '../backend/data/gtfs_raw/static_trips.csv'
+    where route_id is not null
+),
+
+parent as (
+    select route_id as to_field
+    from '../backend/data/gtfs_raw/static_routes.csv'
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.090649 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:14:51.090912 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"
+[0m18:14:51.091167 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    route_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_routes.csv'
+where route_id is not null
+group by route_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.098644 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m18:14:51.100480 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: ROLLBACK
+[0m18:14:51.101259 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743'
+[0m18:14:51.101640 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743: Close
+[0m18:14:51.102275 [info ] [Thread-1 (]: 11 of 13 PASS source_unique_gtfs_raw_routes_route_id ........................... [[32mPASS[0m in 0.03s]
+[0m18:14:51.102963 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743
+[0m18:14:51.103430 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:14:51.103844 [info ] [Thread-1 (]: 12 of 13 START test source_unique_gtfs_raw_stops_stop_id ....................... [RUN]
+[0m18:14:51.104278 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_unique_gtfs_raw_routes_route_id.dbde35d743, now test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663)
+[0m18:14:51.104561 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:14:51.108008 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:14:51.108794 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:14:51.110326 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:14:51.111058 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:14:51.111341 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: BEGIN
+[0m18:14:51.111602 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:14:51.112151 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:14:51.112445 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"
+[0m18:14:51.112742 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    stop_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_stops.csv'
+where stop_id is not null
+group by stop_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.144384 [debug] [Thread-1 (]: SQL status: OK in 0.031 seconds
+[0m18:14:51.145991 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: ROLLBACK
+[0m18:14:51.146607 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663'
+[0m18:14:51.146909 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663: Close
+[0m18:14:51.147387 [info ] [Thread-1 (]: 12 of 13 PASS source_unique_gtfs_raw_stops_stop_id ............................. [[32mPASS[0m in 0.04s]
+[0m18:14:51.148068 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663
+[0m18:14:51.148468 [debug] [Thread-1 (]: Began running node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:14:51.148856 [info ] [Thread-1 (]: 13 of 13 START test source_unique_gtfs_raw_trips_trip_id ....................... [RUN]
+[0m18:14:51.149297 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.ttc_analytics.source_unique_gtfs_raw_stops_stop_id.0f6581b663, now test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845)
+[0m18:14:51.149594 [debug] [Thread-1 (]: Began compiling node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:14:51.152769 [debug] [Thread-1 (]: Writing injected SQL for node "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:14:51.153655 [debug] [Thread-1 (]: Began executing node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:14:51.155696 [debug] [Thread-1 (]: Writing runtime sql for node "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:14:51.156505 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:14:51.156800 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: BEGIN
+[0m18:14:51.157059 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m18:14:51.157636 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m18:14:51.157903 [debug] [Thread-1 (]: Using duckdb connection "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"
+[0m18:14:51.158166 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845"} */
+
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    trip_id as unique_field,
+    count(*) as n_records
+
+from '../backend/data/gtfs_raw/static_trips.csv'
+where trip_id is not null
+group by trip_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m18:14:51.163179 [debug] [Thread-2 (]: SQL status: OK in 0.073 seconds
+[0m18:14:51.165527 [debug] [Thread-2 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: ROLLBACK
+[0m18:14:51.166234 [debug] [Thread-2 (]: Failed to rollback 'test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60'
+[0m18:14:51.166537 [debug] [Thread-2 (]: On test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60: Close
+[0m18:14:51.167105 [info ] [Thread-2 (]: 10 of 13 PASS source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_  [[32mPASS[0m in 0.10s]
+[0m18:14:51.167843 [debug] [Thread-2 (]: Finished running node test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60
+[0m18:14:51.280954 [debug] [Thread-4 (]: SQL status: OK in 0.261 seconds
+[0m18:14:51.284964 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: ROLLBACK
+[0m18:14:51.285595 [debug] [Thread-4 (]: Failed to rollback 'test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded'
+[0m18:14:51.285879 [debug] [Thread-4 (]: On test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded: Close
+[0m18:14:51.286360 [info ] [Thread-4 (]: 9 of 13 PASS source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_  [[32mPASS[0m in 0.28s]
+[0m18:14:51.287008 [debug] [Thread-4 (]: Finished running node test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded
+[0m18:14:51.290893 [debug] [Thread-1 (]: SQL status: OK in 0.132 seconds
+[0m18:14:51.292888 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: ROLLBACK
+[0m18:14:51.293413 [debug] [Thread-1 (]: Failed to rollback 'test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845'
+[0m18:14:51.293679 [debug] [Thread-1 (]: On test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845: Close
+[0m18:14:51.294115 [info ] [Thread-1 (]: 13 of 13 PASS source_unique_gtfs_raw_trips_trip_id ............................. [[32mPASS[0m in 0.14s]
+[0m18:14:51.294705 [debug] [Thread-1 (]: Finished running node test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845
+[0m18:14:51.430624 [debug] [Thread-3 (]: SQL status: OK in 0.419 seconds
+[0m18:14:51.435145 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9: ROLLBACK
+[0m18:14:51.435695 [debug] [Thread-3 (]: Failed to rollback 'test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9'
+[0m18:14:51.435992 [debug] [Thread-3 (]: On test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9: Close
+[0m18:14:51.436456 [info ] [Thread-3 (]: 8 of 13 PASS source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_  [[32mPASS[0m in 0.45s]
+[0m18:14:51.437073 [debug] [Thread-3 (]: Finished running node test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9
+[0m18:14:51.438148 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:14:51.438384 [debug] [MainThread]: On master: BEGIN
+[0m18:14:51.438590 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m18:14:51.439034 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:14:51.439259 [debug] [MainThread]: On master: COMMIT
+[0m18:14:51.439470 [debug] [MainThread]: Using duckdb connection "master"
+[0m18:14:51.439675 [debug] [MainThread]: On master: COMMIT
+[0m18:14:51.440018 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m18:14:51.440236 [debug] [MainThread]: On master: Close
+[0m18:14:51.440504 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m18:14:51.440701 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m18:14:51.440887 [debug] [MainThread]: Connection 'test.ttc_analytics.source_unique_gtfs_raw_trips_trip_id.a208cb4845' was properly closed.
+[0m18:14:51.441069 [debug] [MainThread]: Connection 'test.ttc_analytics.source_relationships_gtfs_raw_stop_times_trip_id__trip_id__source_gtfs_raw_trips_.149554fded' was properly closed.
+[0m18:14:51.441252 [debug] [MainThread]: Connection 'test.ttc_analytics.source_relationships_gtfs_raw_shapes_shape_id__shape_id__source_gtfs_raw_trips_.54bd302ff9' was properly closed.
+[0m18:14:51.441434 [debug] [MainThread]: Connection 'test.ttc_analytics.source_relationships_gtfs_raw_trips_route_id__route_id__source_gtfs_raw_routes_.46a0b3fb60' was properly closed.
+[0m18:14:51.441669 [info ] [MainThread]: 
+[0m18:14:51.442010 [info ] [MainThread]: Finished running 13 data tests in 0 hours 0 minutes and 0.80 seconds (0.80s).
+[0m18:14:51.443824 [debug] [MainThread]: Command end result
+[0m18:14:51.460939 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m18:14:51.463090 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m18:14:51.468740 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\run_results.json
+[0m18:14:51.469000 [info ] [MainThread]: 
+[0m18:14:51.469412 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m18:14:51.469787 [info ] [MainThread]: 
+[0m18:14:51.470110 [info ] [MainThread]: Done. PASS=13 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=13
+[0m18:14:51.470658 [warn ] [MainThread]: [[33mWARNING[0m][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 3 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+[0m18:14:51.471495 [debug] [MainThread]: Command `dbt test` succeeded at 18:14:51.471405 after 2.01 seconds
+[0m18:14:51.471783 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1BFBDEC50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C1067390>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E1C1066850>]}
+[0m18:14:51.472058 [debug] [MainThread]: Flushing usage events
+[0m18:14:51.850015 [debug] [MainThread]: An error was encountered while trying to flush usage events
