@@ -9,7 +9,7 @@
     as (
       -- stg_stops.sql
 
-SELECT  cast(stop_id AS integer)             AS stop_id,
+SELECT  cast(stop_id AS varchar)             AS stop_id,
         cast(stop_name AS varchar)           AS stop_name,
         cast(stop_lat AS float)              AS stop_lat,
         cast(stop_lon AS float)              AS stop_lon,

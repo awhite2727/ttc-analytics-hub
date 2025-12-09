@@ -9,7 +9,7 @@
     as (
       -- stg_shapes.sql
 
-SELECT  cast(shape_id AS integer)          AS shape_id,
+SELECT  cast(shape_id AS varchar)          AS shape_id,
         cast(shape_pt_lat AS float)        AS shape_pt_lat,
         cast(shape_pt_lon AS float)        AS shape_pt_lon,
         cast(shape_pt_sequence AS integer) AS shape_pt_sequence,
