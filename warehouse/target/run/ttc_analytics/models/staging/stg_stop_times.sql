@@ -9,8 +9,8 @@
     as (
       -- stg_stop_times.sql
 
-SELECT  cast(trip_id AS integer)       AS trip_id,
-        cast(stop_id AS integer)       AS stop_id,
+SELECT  cast(trip_id AS varchar)       AS trip_id,
+        cast(stop_id AS varchar)       AS stop_id,
         cast(stop_sequence AS integer) AS stop_sequence,
         cast(shape_dist_traveled as float) as shape_dist_traveled
 
