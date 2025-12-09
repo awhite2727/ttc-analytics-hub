@@ -8,23 +8,63 @@ sources:
         description: "Raw static routes data from GTFS"
         config:
           external_location: "../backend/data/gtfs_raw/static_routes.csv"
+        columns:
+          - name: route_id
+            tests:
+              - not_null
+              - unique
 
       - name: trips
         description: "Raw static trips data from GTFS"
         config:
           external_location: "../backend/data/gtfs_raw/static_trips.csv"
+        columns:
+          - name: trip_id
+            tests:
+              - not_null
+              - unique
+          - name: route_id
+            tests:
+              - relationships:
+                  to: source('gtfs_raw', 'routes')
+                  field: route_id
 
       - name: stop_times
         description: "Raw static stop times data from GTFS"
         config:
           external_location: "../backend/data/gtfs_raw/static_stop_times.csv"
+        columns:
+          - name: trip_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('gtfs_raw', 'trips')
+                  field: trip_id
+          - name: stop_sequence
+            tests:
+              - not_null
 
       - name: shapes
         description: "Raw static shapes data from GTFS"
         config:
           external_location: "../backend/data/gtfs_raw/static_shapes.csv"
+        columns:
+          - name: shape_id
+            tests:
+              - not_null
+              - relationships:
+                  to: source('gtfs_raw', 'trips')
+                  field: shape_id
+          - name: shape_pt_sequence
+            tests:
+              - not_null
         
       - name: stops
         description: "Raw static stops data from GTFS"
         config:
           external_location: "../backend/data/gtfs_raw/static_stops.csv"
+        columns:
+          - name: stop_id
+            tests:
+              - not_null
+              - unique
