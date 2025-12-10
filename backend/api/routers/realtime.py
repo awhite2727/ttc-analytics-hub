@@ -27,7 +27,8 @@ def get_vehicles(route_id: str = Query(None), direction_id: int = Query(None)):
             "properties": {
                 "vehicle_id": row['vehicle_id'],
                 "label": row['vehicle_label'],
-                "bearing": row['bearing']
+                "bearing": row['bearing'],
+                "arrow_bearing": (row['bearing'] + 90) % 360
             }
         })
 
