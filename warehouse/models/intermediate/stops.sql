@@ -1,6 +1,6 @@
 {{ config(materialized='table') }}
 
--- Clean, ready-to-query stops layer
+-- Clean stops layer
 
 SELECT  stop_id,
         stop_name,
