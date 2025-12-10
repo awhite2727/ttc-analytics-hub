@@ -1,109 +1,42 @@
-import duckdb
-from fastapi import FastAPI, Query
-from pathlib import Path
+import asyncio
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-import json
+from contextlib import asynccontextmanager
 
-app = FastAPI()
+from api.db import db
+from api.services.polling import update_vehicle_positions
+from api.routers import static, realtime
 
-# Allow the frontend to talk to the backend
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # --- STARTUP ---
+    print("Starting up... Connecting to DB and starting poller.")
+    db.connect()
+    
+    # Start the background polling task
+    polling_task = asyncio.create_task(update_vehicle_positions())
+    
+    yield
+    
+    # --- SHUTDOWN ---
+    print("Shutting down...")
+    polling_task.cancel()
+    db.close()
+
+app = FastAPI(lifespan=lifespan)
+
+# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # For development only
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# Connect to warehouse
-CURRENT_DIR = Path(__file__).resolve().parent
-DB_PATH = CURRENT_DIR.parent.parent / "warehouse" / "analytics.duckdb"
-con = duckdb.connect(str(DB_PATH), read_only=True) 
 
 @app.get("/")
 def read_root():
     return {"status": "ok", "service": "TTC GTFS API"}
 
-# 1. NEW ENDPOINT: Get available directions for a route
-@app.get("/api/directions")
-def get_directions(route_id: str):
-    """
-    Returns the available directions (0/1) and their headsigns 
-    (e.g., 'East - To Kennedy Stn') for a specific route.
-    """
-    query = """
-        SELECT direction_id, trip_name 
-        FROM route_shapes_lookup 
-        WHERE route_id = ?
-        ORDER BY direction_id
-    """
-    cursor = con.cursor()
-    df = cursor.execute(query, [route_id]).df()
-    return df.to_dict(orient="records")
-
-@app.get("/api/route_list")
-def get_route_list():
-    """Returns a simple list of Route IDs and Names"""
-    query = """
-        SELECT DISTINCT route_id, route_long_name 
-        FROM stg_routes 
-        ORDER BY route_id
-    """
-    df = con.execute(query).df()
-    return df.to_dict(orient="records")
-
-@app.get("/api/routes")
-def get_routes(route_id: str = Query(None), direction_id: int = Query(None)):
-    cursor = con.cursor()
-    
-    query = """
-        SELECT route_id, trip_name, coordinates
-        FROM get_routes
-        WHERE route_id = ?
-    """
-    params = [route_id]
-
-    # Add optional direction filter
-    if direction_id is not None:
-        query += " AND direction_id = ?"
-        params.append(direction_id)
-
-    results = cursor.execute(query, params).fetchall()
-    
-    features = []
-    for row in results:
-        features.append({
-            "type": "Feature",
-            "geometry": { "type": "LineString", "coordinates": row[2] },
-            "properties": { "route_id": row[0], "trip_name": row[1] }
-        })
-
-    return {"type": "FeatureCollection", "features": features}
-
-@app.get("/api/stops")
-def get_stops(route_id: str = Query(None), direction_id: int = Query(None)):
-    cursor = con.cursor()
-    
-    query = """
-        SELECT stop_id, stop_name, stop_lat, stop_lon 
-        FROM get_route_stops 
-        WHERE route_id = ?
-    """
-    params = [route_id]
-
-    # Add optional direction filter
-    if direction_id is not None:
-        query += " AND direction_id = ?"
-        params.append(direction_id)
-
-    df = cursor.execute(query, params).df()
-    
-    features = []
-    for _, row in df.iterrows():
-        features.append({
-            "type": "Feature",
-            "geometry": { "type": "Point", "coordinates": [row['stop_lon'], row['stop_lat']] },
-            "properties": { "stop_id": row['stop_id'], "stop_name": row['stop_name'] }
-        })
-
-    return {"type": "FeatureCollection", "features": features}
+# Register the split routers
+app.include_router(static.router, prefix="/api", tags=["Static Data"])
+app.include_router(realtime.router, prefix="/api", tags=["Realtime Data"])
