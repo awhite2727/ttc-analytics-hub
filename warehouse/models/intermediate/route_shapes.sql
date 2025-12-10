@@ -8,7 +8,7 @@ SELECT  shape_id,
                 shape_pt_lon,
                 shape_pt_lat
             ) ORDER BY  shape_pt_sequence ASC 
-        ) AS coordinates
+        ) AS coordinates,
 FROM {{ ref('stg_shapes') }}
 GROUP BY  shape_id
 
