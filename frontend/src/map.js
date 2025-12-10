@@ -10,14 +10,20 @@ const map = new maplibregl.Map({
 let vehicleInterval = null;
 
 map.on('load', async () => {
-      map.loadImage(
-      './assets/bus-icon.png',
-      (error, image) => {
-          if (error) throw error;
-          map.addImage('bus-icon', image); // Assign a unique ID to the image
-      }
-  );
-
+    map.loadImage(
+    './assets/bus-icon-2.png',
+    (error, image) => {
+        if (error) throw error;
+        map.addImage('bus-icon', image); // Assign a unique ID to the image
+        }
+    );
+    map.loadImage(
+    './assets/bus-arrow.png',
+    (error, image) => {
+        if (error) throw error;
+        map.addImage('arrow-icon', image); // Assign a unique ID to the image
+        }
+    );
     // 1. Setup Layers
     setupMapLayers();
 
@@ -60,10 +66,25 @@ function setupMapLayers() {
         'source': 'ttc-vehicles',
         'layout': {
             'icon-image': 'bus-icon',
-            'icon-size': 0.15,        
+            'icon-size': 0.04,        
             'icon-allow-overlap': true,
             'icon-rotate': ['get', 'bearing'], // Rotate bus based on direction
             'icon-rotation-alignment': 'map'
+        }
+    });
+
+    // Vehicle direction arrows
+    map.addLayer({
+        'id': 'vehicles-layer-dir',
+        'type': 'symbol',       
+        'source': 'ttc-vehicles',
+        'layout': {
+            'icon-image': 'arrow-icon',
+            'icon-size': 0.4,        
+            'icon-allow-overlap': true,
+            'icon-rotate': ['get','arrow_bearing'], // Rotate bus based on direction
+            'icon-rotation-alignment': 'map',
+            'icon-offset': [-65,0]
         }
     });
 }
