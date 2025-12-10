@@ -33,7 +33,7 @@ def get_directions(route_id: str):
     """
     query = """
         SELECT direction_id, trip_name 
-        FROM int_route_shapes_lookup 
+        FROM route_shapes_lookup 
         WHERE route_id = ?
         ORDER BY direction_id
     """
@@ -56,18 +56,16 @@ def get_route_list():
 def get_routes(route_id: str = Query(None), direction_id: int = Query(None)):
     cursor = con.cursor()
     
-    # Base query
     query = """
-        SELECT lookup.route_id, lookup.trip_name, shapes.coordinates
-        FROM int_route_shapes_lookup AS lookup
-        JOIN dim_route_shapes AS shapes ON lookup.shape_id = shapes.shape_id
-        WHERE lookup.route_id = ?
+        SELECT route_id, trip_name, coordinates
+        FROM get_routes
+        WHERE route_id = ?
     """
     params = [route_id]
 
     # Add optional direction filter
     if direction_id is not None:
-        query += " AND lookup.direction_id = ?"
+        query += " AND direction_id = ?"
         params.append(direction_id)
 
     results = cursor.execute(query, params).fetchall()
@@ -86,7 +84,11 @@ def get_routes(route_id: str = Query(None), direction_id: int = Query(None)):
 def get_stops(route_id: str = Query(None), direction_id: int = Query(None)):
     cursor = con.cursor()
     
-    query = "SELECT stop_id, stop_name, stop_lat, stop_lon FROM dim_route_stops WHERE route_id = ?"
+    query = """
+        SELECT stop_id, stop_name, stop_lat, stop_lon 
+        FROM get_route_stops 
+        WHERE route_id = ?
+    """
     params = [route_id]
 
     # Add optional direction filter
