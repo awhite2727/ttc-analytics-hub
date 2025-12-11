@@ -11,7 +11,7 @@ let vehicleInterval = null;
 
 map.on('load', async () => {
     map.loadImage(
-    './assets/bus-icon-2.png',
+    './assets/bus-icon-blue.png',
     (error, image) => {
         if (error) throw error;
         map.addImage('bus-icon', image); // Assign a unique ID to the image
@@ -55,7 +55,7 @@ function setupMapLayers() {
         'id': 'stops-layer',
         'type': 'circle',
         'source': 'ttc-stops',
-        'paint': { 'circle-radius': 5, 'circle-color': '#ffffff', 'circle-stroke-color': '#2d3436', 'circle-stroke-width': 1.5 }
+        'paint': { 'circle-radius': 3, 'circle-color': '#ffffff', 'circle-stroke-color': '#2d3436', 'circle-stroke-width': 1.5 }
     });
 
     // Vehicles
@@ -66,7 +66,7 @@ function setupMapLayers() {
         'source': 'ttc-vehicles',
         'layout': {
             'icon-image': 'bus-icon',
-            'icon-size': 0.04,        
+            'icon-size': 0.08,        
             'icon-allow-overlap': true,
             'icon-rotate': ['get', 'bearing'], // Rotate bus based on direction
             'icon-rotation-alignment': 'map'
