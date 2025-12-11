@@ -1,5 +1,7 @@
 backend/venv/
 backend/api/__pycache__/
+backend/api/routers/__pycache__/
+backend/api/services/__pycache__/
 backend/data/gtfs_raw/
 backend/data/realtime/
 warehouse/venv2/

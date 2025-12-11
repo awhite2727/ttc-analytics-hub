@@ -2,7 +2,6 @@ import duckdb
 from pathlib import Path
 
 # Calculate absolute path to warehouse/analytics.duckdb
-# Assumes structure: backend/api/db.py -> go up 2 levels -> warehouse
 CURRENT_DIR = Path(__file__).resolve().parent
 DB_PATH = CURRENT_DIR.parent.parent / "warehouse" / "analytics.duckdb"
 
@@ -40,7 +39,6 @@ class Database:
             print("Database connection closed.")
 
     def get_cursor(self):
-        # Helper to get a cursor for the current connection
         if not self.con:
             self.connect()
         return self.con.cursor()
