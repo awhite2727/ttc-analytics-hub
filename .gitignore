@@ -2,8 +2,3 @@ backend/venv/
 backend/api/__pycache__/
 backend/data/gtfs_raw/
 backend/data/realtime/
-warehouse/venv2/
-warehouse/logs/
-warehouse/target/
-warehouse/*.duckdb
-precompute.py
