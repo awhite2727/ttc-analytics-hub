@@ -5,6 +5,5 @@ backend/data/realtime/
 warehouse/venv2/
 warehouse/logs/
 warehouse/target/
-warehouse/analytics.duckdb
-warehouse/analytics.duckdb.wal
+warehouse/*.duckdb
 precompute.py
