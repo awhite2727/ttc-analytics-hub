@@ -6,7 +6,7 @@ from contextlib import asynccontextmanager
 from api.db import db
 from api.services.polling import update_vehicle_positions
 from api.services.analytics import run_analytics_engine
-from api.routers import static, realtime
+from api.routers import static, realtime, metrics
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -42,3 +42,4 @@ def read_root():
 # Register the split routers
 app.include_router(static.router, prefix="/api", tags=["Static Data"])
 app.include_router(realtime.router, prefix="/api", tags=["Realtime Data"])
+app.include_router(metrics.router, prefix="/api", tags=["Metrics"])

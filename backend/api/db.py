@@ -17,7 +17,7 @@ class Database:
     def init_tables(self):
         cursor = self.con.cursor()
         
-        # 1. LIVE SNAPSHOT - For the Map
+        # LIVE VEHICLES - Current Snapshot
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS realtime_vehicles (
                 vehicle_id VARCHAR,
@@ -34,7 +34,20 @@ class Database:
             )
         """)
 
-        # 2. RAW LOG - For 24h History
+        # LIVE PREDICTIONS
+        cursor.execute("""
+            CREATE TABLE IF NOT EXISTS realtime_predictions (
+                trip_id VARCHAR,
+                stop_id VARCHAR,
+                stop_sequence INTEGER,
+                arrival_time TIMESTAMP,
+                departure_time TIMESTAMP,
+                delay INTEGER, -- seconds
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
+        # RAW LOG - For 24h History
         # No Primary Key, optimized for fast inserts
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS raw_vehicle_position_log (
@@ -48,7 +61,7 @@ class Database:
             )
         """)
 
-        # 3. AGGREGATED METRICS - Permanent Storage
+        # AGGREGATED METRICS - Permanent Storage
         # Aggregates speed and volume per route, per hour
         cursor.execute("""
             CREATE TABLE IF NOT EXISTS analytics_route_stats_hourly (
