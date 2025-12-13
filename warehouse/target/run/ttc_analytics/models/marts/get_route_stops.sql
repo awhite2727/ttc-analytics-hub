@@ -13,14 +13,12 @@
 
 WITH select_route AS (
 	SELECT  route_id,
-            direction_id,
 	        shape_id
     FROM "analytics"."main"."route_shapes_lookup"
 ),
 
 select_trip AS (
     SELECT  r.route_id,
-            r.direction_id,
             r.shape_id,
             t.trip_id,
     FROM select_route r
@@ -36,7 +34,6 @@ select_stops AS (
 )
 
 SELECT  DISTINCT t.route_id,
-        t.direction_id,
         s2.stop_id,
         s2.stop_name,
         s2.stop_lat,

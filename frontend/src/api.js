@@ -4,16 +4,16 @@ export async function fetchRouteList() {
     const res = await fetch(`${API_BASE}/route_list`);
     return await res.json();
 }
-
+/** 
 export async function fetchDirections(routeId) {
     const res = await fetch(`${API_BASE}/directions?route_id=${routeId}`);
     return await res.json();
 }
-
-export async function fetchMapData(routeId, directionId) {
+*/
+export async function fetchMapData(routeId) {
     const [routesResp, stopsResp] = await Promise.all([
-        fetch(`${API_BASE}/routes?route_id=${routeId}&direction_id=${directionId}`),
-        fetch(`${API_BASE}/stops?route_id=${routeId}&direction_id=${directionId}`)
+        fetch(`${API_BASE}/routes?route_id=${routeId}`),
+        fetch(`${API_BASE}/stops?route_id=${routeId}`)
     ]);
     return {
         routes: await routesResp.json(),

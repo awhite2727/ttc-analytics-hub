@@ -2,18 +2,19 @@ from fastapi import APIRouter, Query
 from api.db import db
 
 router = APIRouter()
-
+"""
 @router.get("/directions")
 def get_directions(route_id: str):
     cursor = db.get_cursor()
-    query = """
+    query = 
         SELECT direction_id, trip_name 
         FROM route_shapes_lookup 
         WHERE route_id = ?
         ORDER BY direction_id
-    """
+    
     df = cursor.execute(query, [route_id]).df()
     return df.to_dict(orient="records")
+"""
 
 @router.get("/route_list")
 def get_route_list():

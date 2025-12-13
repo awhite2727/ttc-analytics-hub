@@ -3,6 +3,7 @@ backend/api/__pycache__/
 backend/data/gtfs_raw/
 backend/data/realtime/
 warehouse/analytics.duckdb
+warehouse/analytics.duckdb.wal
 warehouse/logs/
 warehouse/target/
 warehouse/venv2/

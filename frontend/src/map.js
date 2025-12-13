@@ -1,4 +1,4 @@
-import { fetchRouteList, fetchDirections, fetchMapData, fetchVehicles } from './api.js';
+import { fetchRouteList, fetchMapData, fetchVehicles } from './api.js';
 
 const map = new maplibregl.Map({
     container: 'map',
@@ -131,50 +131,24 @@ async function populateRouteSelect() {
             option.textContent = `${route.route_id} - ${route.route_long_name}`;
             routeSelect.appendChild(option);
         });
-
+        
         routeSelect.addEventListener('change', async (e) => {
             const routeId = e.target.value;
-            const dirSelect = document.getElementById('dir-select');
-            dirSelect.innerHTML = '<option value="">-- Select Direction --</option>';
-            dirSelect.disabled = true;
+            await updateMapData(routeId);
 
             if (!routeId) {
                 clearMap();
                 return;
             }
-            await populateDirectionSelect(routeId);
         });
     } catch (error) { console.error(error); }
 }
 
-async function populateDirectionSelect(routeId) {
-    const directions = await fetchDirections(routeId);
-    const dirSelect = document.getElementById('dir-select');
-    
-    directions.forEach(d => {
-        const option = document.createElement('option');
-        option.value = d.direction_id;
-        option.textContent = d.trip_name;
-        dirSelect.appendChild(option);
-    });
-
-    dirSelect.disabled = false;
-    
-    if (directions.length > 0) {
-        dirSelect.value = directions[0].direction_id;
-        updateMapData(routeId, directions[0].direction_id);
-    }
-
-    dirSelect.onchange = (e) => {
-        if (e.target.value !== "") updateMapData(routeId, e.target.value);
-    };
-}
-
-async function updateMapData(routeId, directionId) {
-    if (!routeId || directionId === "") return;
+async function updateMapData(routeId) {
+    if (!routeId === "") return;
     
     // 1. Load Static Data
-    const data = await fetchMapData(routeId, directionId);
+    const data = await fetchMapData(routeId);
     map.getSource('ttc-routes').setData(data.routes);
     map.getSource('ttc-stops').setData(data.stops);
     

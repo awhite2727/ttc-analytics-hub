@@ -7,7 +7,6 @@ with route_colour as (
 
 SELECT  r.route_id,
         l.trip_name,
-        l.direction_id,
         s.coordinates,
         r.route_color
 FROM route_colour r
