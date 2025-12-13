@@ -2,3 +2,7 @@ backend/venv/
 backend/api/__pycache__/
 backend/data/gtfs_raw/
 backend/data/realtime/
+warehouse/analytics.db
+warehouse/logs/
+warehouse/target/
+warehouse/venv2/
