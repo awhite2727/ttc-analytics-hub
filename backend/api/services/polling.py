@@ -1,7 +1,17 @@
 import asyncio
 import requests
+from datetime import datetime, timedelta
 from google.transit import gtfs_realtime_pb2
 from api.db import db
+
+def cleanup_old_data():
+    """
+    Cleans up vehicle position data older than 3 days.
+    """
+    if db.con:
+        db.con.execute(
+            "DELETE FROM realtime_vehicles WHERE timestamp < current_date - INTERVAL 3 DAY"
+        )
 
 async def update_vehicle_positions():
     """
@@ -35,7 +45,7 @@ async def update_vehicle_positions():
                                 v.position.longitude,
                                 v.position.bearing,
                                 v.position.speed,
-                                v.vehicle.label
+                                v.vehicle.label,
                             )
                             vehicles.append(row)
 
@@ -47,7 +57,7 @@ async def update_vehicle_positions():
                         cursor.executemany("""
                             INSERT INTO realtime_vehicles 
                             (vehicle_id, trip_id, route_id, direction_id, latitude, longitude, bearing, speed, vehicle_label, timestamp)
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, now())
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, current_timestamp)
                         """, vehicles)
                         cursor.execute("COMMIT")
                         # Optional: Print status

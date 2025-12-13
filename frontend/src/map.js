@@ -11,7 +11,7 @@ let vehicleInterval = null;
 
 map.on('load', async () => {
     map.loadImage(
-    './assets/bus-icon-blue.png',
+    './assets/bus-icon-2.png',
     (error, image) => {
         if (error) throw error;
         map.addImage('bus-icon', image); // Assign a unique ID to the image
@@ -61,14 +61,19 @@ function setupMapLayers() {
     // Vehicles
     map.addSource('ttc-vehicles', { type: 'geojson', data: { type: "FeatureCollection", features: [] } });
     map.addLayer({
+        'id': 'Vehicles-outline',
+        'type': 'circle',
+        'source': 'ttc-vehicles',
+        'paint': { 'circle-radius': 24, 'circle-color': '#000'}
+    });
+    map.addLayer({
         'id': 'vehicles-layer',
         'type': 'symbol',       
         'source': 'ttc-vehicles',
         'layout': {
             'icon-image': 'bus-icon',
-            'icon-size': 0.08,        
+            'icon-size': 0.04,        
             'icon-allow-overlap': true,
-            'icon-rotate': ['get', 'bearing'], // Rotate bus based on direction
             'icon-rotation-alignment': 'map'
         }
     });
@@ -80,11 +85,11 @@ function setupMapLayers() {
         'source': 'ttc-vehicles',
         'layout': {
             'icon-image': 'arrow-icon',
-            'icon-size': 0.4,        
+            'icon-size': 0.46,        
             'icon-allow-overlap': true,
             'icon-rotate': ['get','arrow_bearing'], // Rotate bus based on direction
             'icon-rotation-alignment': 'map',
-            'icon-offset': [-65,0]
+            'icon-offset': [-58,0]
         }
     });
 }
@@ -101,6 +106,18 @@ function setupInteractions() {
     
     map.on('mouseenter', 'stops-layer', () => map.getCanvas().style.cursor = 'pointer');
     map.on('mouseleave', 'stops-layer', () => map.getCanvas().style.cursor = '');
+
+    map.on('click', 'vehicles-layer', (e) => {
+        const coords = e.features[0].geometry.coordinates.slice();
+        const props = e.features[0].properties;
+        new maplibregl.Popup()
+            .setLngLat(coords)
+            .setHTML(`<strong>Vehicle: </strong>${props.vehicle_id}`)
+            .addTo(map);
+    });
+    
+    map.on('mouseenter', 'vehicles-layer', () => map.getCanvas().style.cursor = 'pointer');
+    map.on('mouseleave', 'vehicles-layer', () => map.getCanvas().style.cursor = '');
 }
 
 async function populateRouteSelect() {
