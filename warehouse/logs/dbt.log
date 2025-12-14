@@ -59481,3 +59481,1020 @@ alter table "analytics"."main"."get_route_stops__dbt_tmp" rename to "get_route_s
 [0m13:47:49.609822 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229C26C4D10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229C6066BD0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000229C6067BF0>]}
 [0m13:47:49.610153 [debug] [MainThread]: Flushing usage events
 [0m13:47:50.008756 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:21:56.850509 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A0D8C6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A15611D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A1BC3ED0>]}
+
+
+============================== 19:21:56.856222 | 30ed6249-02af-4ba1-9fd2-eb1fb6cdd484 ==============================
+[0m19:21:56.856222 [info ] [MainThread]: Running with dbt=1.10.15
+[0m19:21:56.857097 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'False', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Adam White\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt run', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Adam White\\Desktop\\ttc-analytics-hub\\warehouse\\logs'}
+[0m19:21:57.188868 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '30ed6249-02af-4ba1-9fd2-eb1fb6cdd484', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A0F389D0>]}
+[0m19:21:57.234652 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '30ed6249-02af-4ba1-9fd2-eb1fb6cdd484', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A2CB97B0>]}
+[0m19:21:57.237654 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m19:21:57.473837 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m19:21:57.629276 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m19:21:57.629817 [debug] [MainThread]: Partial parsing: updated file: ttc_analytics://models\marts\get_route_stops.sql
+[0m19:21:57.839062 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '30ed6249-02af-4ba1-9fd2-eb1fb6cdd484', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A3087850>]}
+[0m19:21:57.948306 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m19:21:57.950657 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m19:21:57.988339 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '30ed6249-02af-4ba1-9fd2-eb1fb6cdd484', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A1BFB980>]}
+[0m19:21:57.988747 [info ] [MainThread]: Found 13 data tests, 10 models, 5 sources, 468 macros
+[0m19:21:57.989088 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '30ed6249-02af-4ba1-9fd2-eb1fb6cdd484', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A2E93930>]}
+[0m19:21:57.990763 [info ] [MainThread]: 
+[0m19:21:57.991118 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:21:57.991464 [info ] [MainThread]: 
+[0m19:21:57.991919 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:21:57.995627 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m19:21:58.109888 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m19:21:58.110234 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m19:21:58.110460 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:21:58.168194 [debug] [ThreadPool]: DuckDB adapter: Error running SQL: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m19:21:58.168581 [debug] [ThreadPool]: DuckDB adapter: Rolling back transaction.
+[0m19:21:58.169436 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:21:58.169710 [debug] [MainThread]: Connection 'list_analytics' was properly closed.
+[0m19:21:58.169932 [info ] [MainThread]: 
+[0m19:21:58.170269 [info ] [MainThread]: Finished running  in 0 hours 0 minutes and 0.18 seconds (0.18s).
+[0m19:21:58.170692 [error] [MainThread]: Encountered an error:
+Runtime Error
+  IO Error: Cannot open file "c:\users\adam white\desktop\ttc-analytics-hub\warehouse\analytics.duckdb": The process cannot access the file because it is being used by another process.
+  
+  File is already open in 
+  C:\Users\Adam White\AppData\Local\Programs\Python\Python313\python.exe (PID 32444)
+[0m19:21:58.171499 [debug] [MainThread]: Command `dbt run` failed at 19:21:58.171412 after 1.40 seconds
+[0m19:21:58.171779 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A356F2B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A19F6210>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001B9A34277D0>]}
+[0m19:21:58.172055 [debug] [MainThread]: Flushing usage events
+[0m19:21:58.574270 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m19:23:00.826180 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C87710C6E0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8778E11D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C877F43ED0>]}
+
+
+============================== 19:23:00.829799 | da809e2e-5a86-4333-b973-f65fb428709b ==============================
+[0m19:23:00.829799 [info ] [MainThread]: Running with dbt=1.10.15
+[0m19:23:00.830348 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'False', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Adam White\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt run', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'C:\\Users\\Adam White\\Desktop\\ttc-analytics-hub\\warehouse\\logs'}
+[0m19:23:01.004226 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8772B89D0>]}
+[0m19:23:01.050117 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8790397B0>]}
+[0m19:23:01.052241 [info ] [MainThread]: Registered adapter: duckdb=1.10.0
+[0m19:23:01.281315 [debug] [MainThread]: checksum: 14a228079bd6df63ba81633f9a3cf44ecfaa31056ac397c602753ec895dbf885, vars: {}, profile: , target: , version: 1.10.15
+[0m19:23:01.401722 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m19:23:01.402083 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m19:23:01.436124 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879446650>]}
+[0m19:23:01.500572 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m19:23:01.502515 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m19:23:01.522751 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C877F7B980>]}
+[0m19:23:01.523088 [info ] [MainThread]: Found 13 data tests, 10 models, 5 sources, 468 macros
+[0m19:23:01.523482 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879060750>]}
+[0m19:23:01.525441 [info ] [MainThread]: 
+[0m19:23:01.525832 [info ] [MainThread]: Concurrency: 4 threads (target='dev')
+[0m19:23:01.526175 [info ] [MainThread]: 
+[0m19:23:01.526656 [debug] [MainThread]: Acquiring new duckdb connection 'master'
+[0m19:23:01.530470 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics'
+[0m19:23:01.601499 [debug] [ThreadPool]: Using duckdb connection "list_analytics"
+[0m19:23:01.601845 [debug] [ThreadPool]: On list_analytics: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics"} */
+
+    
+    select schema_name
+    from system.information_schema.schemata
+    
+    where lower(catalog_name) = '"analytics"'
+    
+  
+  
+[0m19:23:01.602080 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:23:01.959382 [debug] [ThreadPool]: SQL status: OK in 0.357 seconds
+[0m19:23:01.960727 [debug] [ThreadPool]: On list_analytics: Close
+[0m19:23:01.961261 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_analytics, now create_analytics_main)
+[0m19:23:01.961606 [debug] [ThreadPool]: Creating schema "database: "analytics"
+schema: "main"
+"
+[0m19:23:01.966205 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m19:23:01.966446 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+        select type from duckdb_databases()
+        where lower(database_name)='analytics'
+        and type='sqlite'
+    
+  
+[0m19:23:01.966743 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m19:23:01.967630 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:23:01.968440 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m19:23:01.968661 [debug] [ThreadPool]: On create_analytics_main: BEGIN
+[0m19:23:01.969006 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:23:01.969234 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m19:23:01.969440 [debug] [ThreadPool]: On create_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "create_analytics_main"} */
+
+    
+    
+        create schema if not exists "analytics"."main"
+    
+[0m19:23:01.970539 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:23:01.971235 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m19:23:01.971515 [debug] [ThreadPool]: Using duckdb connection "create_analytics_main"
+[0m19:23:01.971741 [debug] [ThreadPool]: On create_analytics_main: COMMIT
+[0m19:23:01.972074 [debug] [ThreadPool]: SQL status: OK in 0.000 seconds
+[0m19:23:01.972377 [debug] [ThreadPool]: On create_analytics_main: Close
+[0m19:23:01.973816 [debug] [ThreadPool]: Acquiring new duckdb connection 'list_analytics_main'
+[0m19:23:01.977255 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m19:23:01.977489 [debug] [ThreadPool]: On list_analytics_main: BEGIN
+[0m19:23:01.977691 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m19:23:01.978383 [debug] [ThreadPool]: SQL status: OK in 0.001 seconds
+[0m19:23:01.978613 [debug] [ThreadPool]: Using duckdb connection "list_analytics_main"
+[0m19:23:01.978828 [debug] [ThreadPool]: On list_analytics_main: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "connection_name": "list_analytics_main"} */
+select
+      'analytics' as database,
+      table_name as name,
+      table_schema as schema,
+      CASE table_type
+        WHEN 'BASE TABLE' THEN 'table'
+        WHEN 'VIEW' THEN 'view'
+        WHEN 'LOCAL TEMPORARY' THEN 'table'
+        END as type
+    from system.information_schema.tables
+    where lower(table_schema) = 'main'
+    and lower(table_catalog) = 'analytics'
+  
+[0m19:23:01.993709 [debug] [ThreadPool]: SQL status: OK in 0.015 seconds
+[0m19:23:01.994682 [debug] [ThreadPool]: On list_analytics_main: ROLLBACK
+[0m19:23:01.996137 [debug] [ThreadPool]: Failed to rollback 'list_analytics_main'
+[0m19:23:01.996367 [debug] [ThreadPool]: On list_analytics_main: Close
+[0m19:23:01.998341 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C87998C7A0>]}
+[0m19:23:01.998658 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:23:01.998868 [debug] [MainThread]: On master: BEGIN
+[0m19:23:01.999062 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m19:23:01.999436 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:23:01.999662 [debug] [MainThread]: On master: COMMIT
+[0m19:23:01.999866 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:23:02.000070 [debug] [MainThread]: On master: COMMIT
+[0m19:23:02.000395 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:23:02.000618 [debug] [MainThread]: On master: Close
+[0m19:23:02.004241 [debug] [Thread-1 (]: Began running node model.ttc_analytics.stg_routes
+[0m19:23:02.004545 [debug] [Thread-4 (]: Began running node model.ttc_analytics.stg_stops
+[0m19:23:02.004821 [debug] [Thread-3 (]: Began running node model.ttc_analytics.stg_stop_times
+[0m19:23:02.005084 [debug] [Thread-2 (]: Began running node model.ttc_analytics.stg_shapes
+[0m19:23:02.005441 [info ] [Thread-1 (]: 1 of 10 START sql table model main.stg_routes .................................. [RUN]
+[0m19:23:02.005757 [info ] [Thread-4 (]: 4 of 10 START sql table model main.stg_stops ................................... [RUN]
+[0m19:23:02.006944 [debug] [Thread-1 (]: Acquiring new duckdb connection 'model.ttc_analytics.stg_routes'
+[0m19:23:02.006213 [info ] [Thread-3 (]: 3 of 10 START sql table model main.stg_stop_times .............................. [RUN]
+[0m19:23:02.007357 [debug] [Thread-4 (]: Acquiring new duckdb connection 'model.ttc_analytics.stg_stops'
+[0m19:23:02.006597 [info ] [Thread-2 (]: 2 of 10 START sql table model main.stg_shapes .................................. [RUN]
+[0m19:23:02.007697 [debug] [Thread-1 (]: Began compiling node model.ttc_analytics.stg_routes
+[0m19:23:02.008027 [debug] [Thread-3 (]: Acquiring new duckdb connection 'model.ttc_analytics.stg_stop_times'
+[0m19:23:02.008295 [debug] [Thread-4 (]: Began compiling node model.ttc_analytics.stg_stops
+[0m19:23:02.008618 [debug] [Thread-2 (]: Acquiring new duckdb connection 'model.ttc_analytics.stg_shapes'
+[0m19:23:02.013627 [debug] [Thread-1 (]: Writing injected SQL for node "model.ttc_analytics.stg_routes"
+[0m19:23:02.013936 [debug] [Thread-3 (]: Began compiling node model.ttc_analytics.stg_stop_times
+[0m19:23:02.015671 [debug] [Thread-4 (]: Writing injected SQL for node "model.ttc_analytics.stg_stops"
+[0m19:23:02.015971 [debug] [Thread-2 (]: Began compiling node model.ttc_analytics.stg_shapes
+[0m19:23:02.017605 [debug] [Thread-3 (]: Writing injected SQL for node "model.ttc_analytics.stg_stop_times"
+[0m19:23:02.020141 [debug] [Thread-2 (]: Writing injected SQL for node "model.ttc_analytics.stg_shapes"
+[0m19:23:02.020660 [debug] [Thread-1 (]: Began executing node model.ttc_analytics.stg_routes
+[0m19:23:02.051733 [debug] [Thread-1 (]: Writing runtime sql for node "model.ttc_analytics.stg_routes"
+[0m19:23:02.052226 [debug] [Thread-4 (]: Began executing node model.ttc_analytics.stg_stops
+[0m19:23:02.052779 [debug] [Thread-2 (]: Began executing node model.ttc_analytics.stg_shapes
+[0m19:23:02.101948 [debug] [Thread-3 (]: Began executing node model.ttc_analytics.stg_stop_times
+[0m19:23:02.102570 [debug] [Thread-4 (]: Writing runtime sql for node "model.ttc_analytics.stg_stops"
+[0m19:23:02.104663 [debug] [Thread-2 (]: Writing runtime sql for node "model.ttc_analytics.stg_shapes"
+[0m19:23:02.106886 [debug] [Thread-3 (]: Writing runtime sql for node "model.ttc_analytics.stg_stop_times"
+[0m19:23:02.107524 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.107873 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: BEGIN
+[0m19:23:02.108181 [debug] [Thread-1 (]: Opening a new connection, currently in state init
+[0m19:23:02.108905 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.109209 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:02.109492 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: BEGIN
+[0m19:23:02.109773 [debug] [Thread-1 (]: SQL status: OK in 0.002 seconds
+[0m19:23:02.110054 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: BEGIN
+[0m19:23:02.110351 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:02.110606 [debug] [Thread-4 (]: Opening a new connection, currently in state init
+[0m19:23:02.110885 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.111147 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m19:23:02.111416 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: BEGIN
+[0m19:23:02.111793 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stg_routes__dbt_tmp"
+  
+    as (
+      -- stg_routes.sql
+
+SELECT  cast(route_id AS varchar)           AS route_id,
+        cast(route_long_name AS varchar)    AS route_long_name,
+        cast(route_type AS integer)         AS route_type,
+        cast(LOWER(route_color) AS varchar) AS route_color
+
+
+FROM '../backend/data/gtfs_raw/static_routes.csv'
+    );
+  
+  
+[0m19:23:02.112211 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m19:23:02.112465 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m19:23:02.112755 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m19:23:02.113132 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.113518 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:02.113838 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stg_stops__dbt_tmp"
+  
+    as (
+      -- stg_stops.sql
+
+SELECT  cast(stop_id AS varchar)             AS stop_id,
+        cast(stop_name AS varchar)           AS stop_name,
+        cast(stop_lat AS float)              AS stop_lat,
+        cast(stop_lon AS float)              AS stop_lon,
+        cast(wheelchair_boarding AS integer) AS wheelchair_boarding,
+
+        CASE WHEN wheelchair_boarding = 1 THEN true else false end AS has_wheelchair_boarding
+
+
+FROM '../backend/data/gtfs_raw/static_stops.csv'
+    );
+  
+  
+[0m19:23:02.114135 [debug] [Thread-3 (]: SQL status: OK in 0.002 seconds
+[0m19:23:02.114420 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stg_shapes__dbt_tmp"
+  
+    as (
+      -- stg_shapes.sql
+
+SELECT  cast(shape_id AS varchar)          AS shape_id,
+        cast(shape_pt_lat AS float)        AS shape_pt_lat,
+        cast(shape_pt_lon AS float)        AS shape_pt_lon,
+        cast(shape_pt_sequence AS integer) AS shape_pt_sequence,
+        cast(shape_dist_traveled AS float) AS shape_dist_traveled
+
+FROM '../backend/data/gtfs_raw/static_shapes.csv'
+    );
+  
+  
+[0m19:23:02.114853 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:02.115302 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stg_stop_times__dbt_tmp"
+  
+    as (
+      -- stg_stop_times.sql
+
+SELECT  cast(trip_id AS varchar)       AS trip_id,
+        cast(stop_id AS varchar)       AS stop_id,
+        cast(stop_sequence AS integer) AS stop_sequence,
+        cast(shape_dist_traveled as float) as shape_dist_traveled
+
+FROM '../backend/data/gtfs_raw/static_stop_times.csv'
+    );
+  
+  
+[0m19:23:02.343964 [debug] [Thread-1 (]: SQL status: OK in 0.231 seconds
+[0m19:23:02.348444 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.348756 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_routes'
+  
+[0m19:23:02.349196 [debug] [Thread-4 (]: SQL status: OK in 0.234 seconds
+[0m19:23:02.349934 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.350211 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:23:02.350489 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_stops'
+  
+[0m19:23:02.351589 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.351976 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_routes'
+  
+[0m19:23:02.352356 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m19:23:02.353247 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.353550 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_stops'
+  
+[0m19:23:02.580564 [debug] [Thread-1 (]: SQL status: OK in 0.228 seconds
+[0m19:23:02.581017 [debug] [Thread-4 (]: SQL status: OK in 0.227 seconds
+[0m19:23:02.586234 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.588862 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.589173 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+alter table "analytics"."main"."stg_routes" rename to "stg_routes__dbt_backup"
+[0m19:23:02.589524 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+alter table "analytics"."main"."stg_stops" rename to "stg_stops__dbt_backup"
+[0m19:23:02.791009 [debug] [Thread-4 (]: SQL status: OK in 0.108 seconds
+[0m19:23:02.791661 [debug] [Thread-1 (]: SQL status: OK in 0.202 seconds
+[0m19:23:02.795002 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.797610 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.798194 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+alter table "analytics"."main"."stg_stops__dbt_tmp" rename to "stg_stops"
+[0m19:23:02.798570 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+alter table "analytics"."main"."stg_routes__dbt_tmp" rename to "stg_routes"
+[0m19:23:02.799735 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:02.800172 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:23:02.821491 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: COMMIT
+[0m19:23:02.822793 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: COMMIT
+[0m19:23:02.823117 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:02.823496 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:02.823902 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: COMMIT
+[0m19:23:02.824267 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: COMMIT
+[0m19:23:03.029175 [debug] [Thread-2 (]: SQL status: OK in 0.914 seconds
+[0m19:23:03.030214 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:03.030500 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_shapes'
+  
+[0m19:23:03.031231 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.032090 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:03.032358 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_shapes'
+  
+[0m19:23:03.032968 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.035165 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:03.035444 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+alter table "analytics"."main"."stg_shapes" rename to "stg_shapes__dbt_backup"
+[0m19:23:03.035905 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.037683 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:03.037947 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+alter table "analytics"."main"."stg_shapes__dbt_tmp" rename to "stg_shapes"
+[0m19:23:03.038392 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.039482 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: COMMIT
+[0m19:23:03.039750 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:03.039989 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: COMMIT
+[0m19:23:03.387329 [debug] [Thread-3 (]: SQL status: OK in 1.271 seconds
+[0m19:23:03.437274 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:03.437676 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_stop_times'
+  
+[0m19:23:03.438478 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m19:23:03.439325 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:03.440042 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_stop_times'
+  
+[0m19:23:03.440677 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.442662 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:03.442934 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+alter table "analytics"."main"."stg_stop_times" rename to "stg_stop_times__dbt_backup"
+[0m19:23:03.443485 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.445490 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:03.445781 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+alter table "analytics"."main"."stg_stop_times__dbt_tmp" rename to "stg_stop_times"
+[0m19:23:03.446240 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:03.447302 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: COMMIT
+[0m19:23:03.447566 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:03.447809 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: COMMIT
+[0m19:23:03.545546 [debug] [Thread-1 (]: SQL status: OK in 0.721 seconds
+[0m19:23:03.550060 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_routes"
+[0m19:23:03.550339 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_routes"} */
+
+      drop table if exists "analytics"."main"."stg_routes__dbt_backup" cascade
+    
+[0m19:23:03.873451 [debug] [Thread-4 (]: SQL status: OK in 1.049 seconds
+[0m19:23:03.875393 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stg_stops"
+[0m19:23:03.875666 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stops"} */
+
+      drop table if exists "analytics"."main"."stg_stops__dbt_backup" cascade
+    
+[0m19:23:06.649089 [debug] [Thread-2 (]: SQL status: OK in 3.609 seconds
+[0m19:23:06.651089 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.stg_shapes"
+[0m19:23:06.651363 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_shapes"} */
+
+      drop table if exists "analytics"."main"."stg_shapes__dbt_backup" cascade
+    
+[0m19:23:06.866364 [debug] [Thread-3 (]: SQL status: OK in 3.418 seconds
+[0m19:23:06.868493 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.stg_stop_times"
+[0m19:23:06.868768 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_stop_times"} */
+
+      drop table if exists "analytics"."main"."stg_stop_times__dbt_backup" cascade
+    
+[0m19:23:07.083138 [debug] [Thread-1 (]: SQL status: OK in 3.532 seconds
+[0m19:23:07.085174 [debug] [Thread-1 (]: On model.ttc_analytics.stg_routes: Close
+[0m19:23:07.086966 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C87968FAD0>]}
+[0m19:23:07.087445 [info ] [Thread-1 (]: 1 of 10 OK created sql table model main.stg_routes ............................. [[32mOK[0m in 5.08s]
+[0m19:23:07.088065 [debug] [Thread-1 (]: Finished running node model.ttc_analytics.stg_routes
+[0m19:23:07.088426 [debug] [Thread-1 (]: Began running node model.ttc_analytics.stg_trips
+[0m19:23:07.088895 [info ] [Thread-1 (]: 5 of 10 START sql table model main.stg_trips ................................... [RUN]
+[0m19:23:07.089326 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stg_routes, now model.ttc_analytics.stg_trips)
+[0m19:23:07.089597 [debug] [Thread-1 (]: Began compiling node model.ttc_analytics.stg_trips
+[0m19:23:07.091583 [debug] [Thread-1 (]: Writing injected SQL for node "model.ttc_analytics.stg_trips"
+[0m19:23:07.092343 [debug] [Thread-1 (]: Began executing node model.ttc_analytics.stg_trips
+[0m19:23:07.094512 [debug] [Thread-1 (]: Writing runtime sql for node "model.ttc_analytics.stg_trips"
+[0m19:23:07.095228 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.095498 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: BEGIN
+[0m19:23:07.095739 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:23:07.096249 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:07.096503 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.096762 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stg_trips__dbt_tmp"
+  
+    as (
+      -- stg_trips.sql
+
+SELECT  cast(trip_id AS varchar)               AS trip_id,
+        cast(service_id AS varchar)            AS service_id,
+        cast(route_id AS varchar)              AS route_id,
+        cast(trip_headsign AS varchar)         AS trip_headsign,
+        cast(trip_short_name AS varchar)       AS trip_short_name,
+        cast(direction_id AS varchar)          AS direction_id,
+        cast(block_id AS varchar)              AS block_id,
+        cast(shape_id AS varchar)              AS shape_id,
+        cast(wheelchair_accessible AS integer) AS wheelchair_accessible,
+        cast(bikes_allowed AS integer)         AS bikes_allowed,
+        
+        --Create clean booleans (original fields are tristate)
+        CASE WHEN wheelchair_accessible = 1 THEN true else false end AS is_accessible, 
+        CASE WHEN bikes_allowed = 1 THEN true else false end AS is_bike_allowed
+
+FROM '../backend/data/gtfs_raw/static_trips.csv'
+    );
+  
+  
+[0m19:23:07.300657 [debug] [Thread-4 (]: SQL status: OK in 3.425 seconds
+[0m19:23:07.301881 [debug] [Thread-4 (]: On model.ttc_analytics.stg_stops: Close
+[0m19:23:07.302343 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8796FF1D0>]}
+[0m19:23:07.302804 [info ] [Thread-4 (]: 4 of 10 OK created sql table model main.stg_stops .............................. [[32mOK[0m in 5.29s]
+[0m19:23:07.303429 [debug] [Thread-4 (]: Finished running node model.ttc_analytics.stg_stops
+[0m19:23:07.303911 [debug] [Thread-4 (]: Began running node model.ttc_analytics.stops
+[0m19:23:07.304235 [info ] [Thread-4 (]: 6 of 10 START sql table model main.stops ....................................... [RUN]
+[0m19:23:07.304606 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stg_stops, now model.ttc_analytics.stops)
+[0m19:23:07.304928 [debug] [Thread-4 (]: Began compiling node model.ttc_analytics.stops
+[0m19:23:07.307112 [debug] [Thread-4 (]: Writing injected SQL for node "model.ttc_analytics.stops"
+[0m19:23:07.307896 [debug] [Thread-4 (]: Began executing node model.ttc_analytics.stops
+[0m19:23:07.310141 [debug] [Thread-4 (]: Writing runtime sql for node "model.ttc_analytics.stops"
+[0m19:23:07.310935 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.311262 [debug] [Thread-4 (]: On model.ttc_analytics.stops: BEGIN
+[0m19:23:07.311555 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m19:23:07.312017 [debug] [Thread-4 (]: SQL status: OK in 0.000 seconds
+[0m19:23:07.312267 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.312530 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."stops__dbt_tmp"
+  
+    as (
+      
+
+-- Clean stops layer
+
+SELECT  stop_id,
+        stop_name,
+        stop_lat,
+        stop_lon
+        
+from "analytics"."main"."stg_stops"
+    );
+  
+  
+[0m19:23:07.681661 [debug] [Thread-1 (]: SQL status: OK in 0.584 seconds
+[0m19:23:07.682732 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.683008 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_trips'
+  
+[0m19:23:07.683772 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:23:07.684613 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.684879 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stg_trips'
+  
+[0m19:23:07.685496 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:07.687540 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.687806 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+alter table "analytics"."main"."stg_trips" rename to "stg_trips__dbt_backup"
+[0m19:23:07.688276 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:07.689976 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.690237 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+alter table "analytics"."main"."stg_trips__dbt_tmp" rename to "stg_trips"
+[0m19:23:07.690687 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:07.691760 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: COMMIT
+[0m19:23:07.692047 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:07.692290 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: COMMIT
+[0m19:23:07.768706 [debug] [Thread-2 (]: SQL status: OK in 1.117 seconds
+[0m19:23:07.769861 [debug] [Thread-2 (]: On model.ttc_analytics.stg_shapes: Close
+[0m19:23:07.770287 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C877226030>]}
+[0m19:23:07.770735 [info ] [Thread-2 (]: 2 of 10 OK created sql table model main.stg_shapes ............................. [[32mOK[0m in 5.76s]
+[0m19:23:07.771363 [debug] [Thread-2 (]: Finished running node model.ttc_analytics.stg_shapes
+[0m19:23:07.771887 [debug] [Thread-2 (]: Began running node model.ttc_analytics.route_shapes
+[0m19:23:07.772466 [debug] [Thread-4 (]: SQL status: OK in 0.460 seconds
+[0m19:23:07.772233 [info ] [Thread-2 (]: 7 of 10 START sql table model main.route_shapes ................................ [RUN]
+[0m19:23:07.773256 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.773563 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stg_shapes, now model.ttc_analytics.route_shapes)
+[0m19:23:07.773850 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stops'
+  
+[0m19:23:07.774128 [debug] [Thread-2 (]: Began compiling node model.ttc_analytics.route_shapes
+[0m19:23:07.776461 [debug] [Thread-2 (]: Writing injected SQL for node "model.ttc_analytics.route_shapes"
+[0m19:23:07.776810 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m19:23:07.777825 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.778099 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'stops'
+  
+[0m19:23:07.778555 [debug] [Thread-2 (]: Began executing node model.ttc_analytics.route_shapes
+[0m19:23:07.780741 [debug] [Thread-2 (]: Writing runtime sql for node "model.ttc_analytics.route_shapes"
+[0m19:23:07.781037 [debug] [Thread-4 (]: SQL status: OK in 0.003 seconds
+[0m19:23:07.783186 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.783459 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+alter table "analytics"."main"."stops" rename to "stops__dbt_backup"
+[0m19:23:07.783941 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:07.784273 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: BEGIN
+[0m19:23:07.784569 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:07.784828 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m19:23:07.786497 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.786906 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+alter table "analytics"."main"."stops__dbt_tmp" rename to "stops"
+[0m19:23:07.787264 [debug] [Thread-2 (]: SQL status: OK in 0.002 seconds
+[0m19:23:07.787593 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:07.787855 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:07.788123 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."route_shapes__dbt_tmp"
+  
+    as (
+      
+
+-- Creates {lon:lat} coordinates for every route point 
+
+SELECT  shape_id,
+        ARRAY_AGG(
+            list_value(
+                shape_pt_lon,
+                shape_pt_lat
+            ) ORDER BY  shape_pt_sequence ASC 
+        ) AS coordinates,
+FROM "analytics"."main"."stg_shapes"
+GROUP BY  shape_id
+    );
+  
+  
+[0m19:23:07.789299 [debug] [Thread-4 (]: On model.ttc_analytics.stops: COMMIT
+[0m19:23:07.789719 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:07.789968 [debug] [Thread-4 (]: On model.ttc_analytics.stops: COMMIT
+[0m19:23:08.202164 [debug] [Thread-3 (]: SQL status: OK in 1.333 seconds
+[0m19:23:08.203391 [debug] [Thread-3 (]: On model.ttc_analytics.stg_stop_times: Close
+[0m19:23:08.203846 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C8799200D0>]}
+[0m19:23:08.204309 [info ] [Thread-3 (]: 3 of 10 OK created sql table model main.stg_stop_times ......................... [[32mOK[0m in 6.20s]
+[0m19:23:08.204951 [debug] [Thread-3 (]: Finished running node model.ttc_analytics.stg_stop_times
+[0m19:23:10.663633 [debug] [Thread-1 (]: SQL status: OK in 2.971 seconds
+[0m19:23:10.665921 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.stg_trips"
+[0m19:23:10.666401 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stg_trips"} */
+
+      drop table if exists "analytics"."main"."stg_trips__dbt_backup" cascade
+    
+[0m19:23:10.670170 [debug] [Thread-4 (]: SQL status: OK in 2.880 seconds
+[0m19:23:10.673602 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.stops"
+[0m19:23:10.673945 [debug] [Thread-1 (]: SQL status: OK in 0.007 seconds
+[0m19:23:10.674273 [debug] [Thread-4 (]: On model.ttc_analytics.stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.stops"} */
+
+      drop table if exists "analytics"."main"."stops__dbt_backup" cascade
+    
+[0m19:23:10.675914 [debug] [Thread-1 (]: On model.ttc_analytics.stg_trips: Close
+[0m19:23:10.676628 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879AEA350>]}
+[0m19:23:10.677193 [info ] [Thread-1 (]: 5 of 10 OK created sql table model main.stg_trips .............................. [[32mOK[0m in 3.59s]
+[0m19:23:10.677839 [debug] [Thread-1 (]: Finished running node model.ttc_analytics.stg_trips
+[0m19:23:10.678115 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m19:23:10.679353 [debug] [Thread-4 (]: On model.ttc_analytics.stops: Close
+[0m19:23:10.679774 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879A1DC10>]}
+[0m19:23:10.680330 [info ] [Thread-4 (]: 6 of 10 OK created sql table model main.stops .................................. [[32mOK[0m in 3.38s]
+[0m19:23:10.681199 [debug] [Thread-4 (]: Finished running node model.ttc_analytics.stops
+[0m19:23:10.689843 [debug] [Thread-2 (]: SQL status: OK in 2.900 seconds
+[0m19:23:10.690627 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.690896 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'route_shapes'
+  
+[0m19:23:10.691635 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:10.692461 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.692729 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'route_shapes'
+  
+[0m19:23:10.693361 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:10.695414 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.695682 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+alter table "analytics"."main"."route_shapes" rename to "route_shapes__dbt_backup"
+[0m19:23:10.696205 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:10.698091 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.698379 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+alter table "analytics"."main"."route_shapes__dbt_tmp" rename to "route_shapes"
+[0m19:23:10.698881 [debug] [Thread-2 (]: SQL status: OK in 0.000 seconds
+[0m19:23:10.702909 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: COMMIT
+[0m19:23:10.703179 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.703426 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: COMMIT
+[0m19:23:10.785099 [debug] [Thread-2 (]: SQL status: OK in 0.081 seconds
+[0m19:23:10.786968 [debug] [Thread-2 (]: Using duckdb connection "model.ttc_analytics.route_shapes"
+[0m19:23:10.787238 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes"} */
+
+      drop table if exists "analytics"."main"."route_shapes__dbt_backup" cascade
+    
+[0m19:23:19.374506 [debug] [Thread-2 (]: SQL status: OK in 8.587 seconds
+[0m19:23:19.375771 [debug] [Thread-2 (]: On model.ttc_analytics.route_shapes: Close
+[0m19:23:19.376207 [debug] [Thread-2 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879ACBC50>]}
+[0m19:23:19.376689 [info ] [Thread-2 (]: 7 of 10 OK created sql table model main.route_shapes ........................... [[32mOK[0m in 11.60s]
+[0m19:23:19.377312 [debug] [Thread-2 (]: Finished running node model.ttc_analytics.route_shapes
+[0m19:23:19.377852 [debug] [Thread-3 (]: Began running node model.ttc_analytics.route_shapes_lookup
+[0m19:23:19.378202 [info ] [Thread-3 (]: 8 of 10 START sql table model main.route_shapes_lookup ......................... [RUN]
+[0m19:23:19.378688 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stg_stop_times, now model.ttc_analytics.route_shapes_lookup)
+[0m19:23:19.379043 [debug] [Thread-3 (]: Began compiling node model.ttc_analytics.route_shapes_lookup
+[0m19:23:19.381713 [debug] [Thread-3 (]: Writing injected SQL for node "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.382632 [debug] [Thread-3 (]: Began executing node model.ttc_analytics.route_shapes_lookup
+[0m19:23:19.385042 [debug] [Thread-3 (]: Writing runtime sql for node "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.385813 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.386101 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: BEGIN
+[0m19:23:19.386362 [debug] [Thread-3 (]: Opening a new connection, currently in state closed
+[0m19:23:19.386947 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m19:23:19.387208 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.387478 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."route_shapes_lookup__dbt_tmp"
+  
+    as (
+      
+
+WITH shape_stats AS (
+    -- Calculate the maximum distance (length) for every shape
+    SELECT  shape_id,
+            MAX(shape_dist_traveled) AS total_length_meters
+    FROM "analytics"."main"."stg_shapes"
+    GROUP BY shape_id
+),
+
+joined_trips AS (
+    SELECT  t.route_id,
+            t.direction_id,
+            t.trip_headsign,
+            t.shape_id,
+            s.total_length_meters
+    FROM "analytics"."main"."stg_trips" t
+    JOIN shape_stats s ON t.shape_id = s.shape_id
+    WHERE t.shape_id IS NOT NULL
+    QUALIFY ROW_NUMBER() OVER (
+        PARTITION BY t.route_id, t.direction_id
+        ORDER BY s.total_length_meters DESC
+    ) = 1
+)
+
+SELECT  route_id,
+        trip_headsign AS trip_name,
+        jt.shape_id,
+        ARRAY_AGG(rs.coordinates) AS multilinestring,
+FROM joined_trips jt
+JOIN "analytics"."main"."route_shapes" rs ON jt.shape_id = rs.shape_id
+-- Group by to deduplicate trips that share the exact same shape
+GROUP BY  route_id,
+          trip_headsign,
+          jt.shape_id
+    );
+  
+  
+[0m19:23:19.461378 [debug] [Thread-3 (]: SQL status: OK in 0.073 seconds
+[0m19:23:19.462874 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.463233 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'route_shapes_lookup'
+  
+[0m19:23:19.464838 [debug] [Thread-3 (]: SQL status: OK in 0.001 seconds
+[0m19:23:19.465839 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.466114 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'route_shapes_lookup'
+  
+[0m19:23:19.466801 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:19.468929 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.469230 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+alter table "analytics"."main"."route_shapes_lookup" rename to "route_shapes_lookup__dbt_backup"
+[0m19:23:19.469881 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:19.471883 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.472157 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+alter table "analytics"."main"."route_shapes_lookup__dbt_tmp" rename to "route_shapes_lookup"
+[0m19:23:19.472652 [debug] [Thread-3 (]: SQL status: OK in 0.000 seconds
+[0m19:23:19.474186 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: COMMIT
+[0m19:23:19.474466 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:19.474713 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: COMMIT
+[0m19:23:20.247277 [debug] [Thread-3 (]: SQL status: OK in 0.772 seconds
+[0m19:23:20.249177 [debug] [Thread-3 (]: Using duckdb connection "model.ttc_analytics.route_shapes_lookup"
+[0m19:23:20.249472 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.route_shapes_lookup"} */
+
+      drop table if exists "analytics"."main"."route_shapes_lookup__dbt_backup" cascade
+    
+[0m19:23:20.309970 [debug] [Thread-3 (]: SQL status: OK in 0.060 seconds
+[0m19:23:20.311220 [debug] [Thread-3 (]: On model.ttc_analytics.route_shapes_lookup: Close
+[0m19:23:20.311694 [debug] [Thread-3 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879AC8590>]}
+[0m19:23:20.312167 [info ] [Thread-3 (]: 8 of 10 OK created sql table model main.route_shapes_lookup .................... [[32mOK[0m in 0.93s]
+[0m19:23:20.312796 [debug] [Thread-3 (]: Finished running node model.ttc_analytics.route_shapes_lookup
+[0m19:23:20.313417 [debug] [Thread-1 (]: Began running node model.ttc_analytics.get_route_stops
+[0m19:23:20.314014 [debug] [Thread-4 (]: Began running node model.ttc_analytics.get_routes
+[0m19:23:20.313774 [info ] [Thread-1 (]: 9 of 10 START sql table model main.get_route_stops ............................. [RUN]
+[0m19:23:20.314462 [info ] [Thread-4 (]: 10 of 10 START sql table model main.get_routes ................................. [RUN]
+[0m19:23:20.314939 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stg_trips, now model.ttc_analytics.get_route_stops)
+[0m19:23:20.315309 [debug] [Thread-4 (]: Re-using an available connection from the pool (formerly model.ttc_analytics.stops, now model.ttc_analytics.get_routes)
+[0m19:23:20.315595 [debug] [Thread-1 (]: Began compiling node model.ttc_analytics.get_route_stops
+[0m19:23:20.315916 [debug] [Thread-4 (]: Began compiling node model.ttc_analytics.get_routes
+[0m19:23:20.318692 [debug] [Thread-1 (]: Writing injected SQL for node "model.ttc_analytics.get_route_stops"
+[0m19:23:20.321098 [debug] [Thread-4 (]: Writing injected SQL for node "model.ttc_analytics.get_routes"
+[0m19:23:20.322101 [debug] [Thread-4 (]: Began executing node model.ttc_analytics.get_routes
+[0m19:23:20.324488 [debug] [Thread-4 (]: Writing runtime sql for node "model.ttc_analytics.get_routes"
+[0m19:23:20.324857 [debug] [Thread-1 (]: Began executing node model.ttc_analytics.get_route_stops
+[0m19:23:20.327311 [debug] [Thread-1 (]: Writing runtime sql for node "model.ttc_analytics.get_route_stops"
+[0m19:23:20.328214 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.328504 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: BEGIN
+[0m19:23:20.328773 [debug] [Thread-4 (]: Opening a new connection, currently in state closed
+[0m19:23:20.329077 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.329532 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: BEGIN
+[0m19:23:20.329827 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m19:23:20.330111 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:20.330536 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.330821 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."get_routes__dbt_tmp"
+  
+    as (
+      -- Clean routes layer
+
+with route_colour as (
+    select route_id, route_color,
+    from "analytics"."main"."stg_routes"
+)
+
+SELECT  r.route_id,
+        l.trip_name,
+        s.coordinates,
+        r.route_color
+FROM route_colour r
+JOIN "analytics"."main"."route_shapes_lookup" l ON r.route_id = l.route_id
+JOIN "analytics"."main"."route_shapes" s ON l.shape_id = s.shape_id
+    );
+  
+  
+[0m19:23:20.331108 [debug] [Thread-1 (]: SQL status: OK in 0.001 seconds
+[0m19:23:20.331521 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.331799 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+
+  
+    
+    
+
+    create  table
+      "analytics"."main"."get_route_stops__dbt_tmp"
+  
+    as (
+      
+
+-- Map stop coordinates to routes
+
+WITH select_route AS (
+	SELECT  route_id,
+	        shape_id
+    FROM "analytics"."main"."route_shapes_lookup"
+),
+
+select_trip AS (
+    SELECT  r.route_id,
+            r.shape_id,
+            t.trip_id,
+    FROM select_route r
+    JOIN "analytics"."main"."stg_trips" t ON r.shape_id = t.shape_id
+    WHERE t.trip_id IS NOT NULL
+),
+
+select_stops AS (
+    SELECT  DISTINCT t.trip_id,
+            st.stop_id,
+            st.stop_sequence
+    FROM select_trip t
+    JOIN "analytics"."main"."stg_stop_times" st ON t.trip_id = st.trip_id
+)
+
+SELECT  DISTINCT t.route_id,
+        s2.stop_id,
+        s2.stop_name,
+        s2.stop_lat,
+        s2.stop_lon,
+        s.stop_sequence
+
+FROM select_trip t
+JOIN select_stops s ON t.trip_id = s.trip_id
+JOIN "analytics"."main"."stops" s2 ON s.stop_id = s2.stop_id
+    );
+  
+  
+[0m19:23:20.364688 [debug] [Thread-4 (]: SQL status: OK in 0.033 seconds
+[0m19:23:20.366839 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.367487 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'get_routes'
+  
+[0m19:23:20.369756 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m19:23:20.372587 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.373307 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'get_routes'
+  
+[0m19:23:20.374749 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:20.379388 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.380101 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+alter table "analytics"."main"."get_routes" rename to "get_routes__dbt_backup"
+[0m19:23:20.381118 [debug] [Thread-4 (]: SQL status: OK in 0.001 seconds
+[0m19:23:20.383964 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.384303 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+alter table "analytics"."main"."get_routes__dbt_tmp" rename to "get_routes"
+[0m19:23:20.387214 [debug] [Thread-4 (]: SQL status: OK in 0.002 seconds
+[0m19:23:20.389313 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: COMMIT
+[0m19:23:20.389808 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:20.390160 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: COMMIT
+[0m19:23:20.483682 [debug] [Thread-1 (]: SQL status: OK in 0.151 seconds
+[0m19:23:20.484765 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.485041 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+
+    SELECT index_name
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'get_route_stops'
+  
+[0m19:23:20.485792 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:20.486617 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.486893 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+
+    SELECT COUNT(*) as remaining_indexes
+    FROM duckdb_indexes()
+    WHERE schema_name = 'main'
+      AND table_name = 'get_route_stops'
+  
+[0m19:23:20.487514 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:20.489903 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.490180 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+alter table "analytics"."main"."get_route_stops" rename to "get_route_stops__dbt_backup"
+[0m19:23:20.490755 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:20.492648 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.492915 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+alter table "analytics"."main"."get_route_stops__dbt_tmp" rename to "get_route_stops"
+[0m19:23:20.493375 [debug] [Thread-1 (]: SQL status: OK in 0.000 seconds
+[0m19:23:20.494486 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: COMMIT
+[0m19:23:20.494749 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:20.494992 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: COMMIT
+[0m19:23:21.091868 [debug] [Thread-4 (]: SQL status: OK in 0.701 seconds
+[0m19:23:21.095188 [debug] [Thread-4 (]: Using duckdb connection "model.ttc_analytics.get_routes"
+[0m19:23:21.095504 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_routes"} */
+
+      drop table if exists "analytics"."main"."get_routes__dbt_backup" cascade
+    
+[0m19:23:21.431945 [debug] [Thread-1 (]: SQL status: OK in 0.937 seconds
+[0m19:23:21.434031 [debug] [Thread-1 (]: Using duckdb connection "model.ttc_analytics.get_route_stops"
+[0m19:23:21.434393 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: /* {"app": "dbt", "dbt_version": "1.10.15", "profile_name": "ttc_analytics", "target_name": "dev", "node_id": "model.ttc_analytics.get_route_stops"} */
+
+      drop table if exists "analytics"."main"."get_route_stops__dbt_backup" cascade
+    
+[0m19:23:21.494980 [debug] [Thread-4 (]: SQL status: OK in 0.399 seconds
+[0m19:23:21.496421 [debug] [Thread-4 (]: On model.ttc_analytics.get_routes: Close
+[0m19:23:21.496855 [debug] [Thread-4 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879ACA930>]}
+[0m19:23:21.497305 [info ] [Thread-4 (]: 10 of 10 OK created sql table model main.get_routes ............................ [[32mOK[0m in 1.18s]
+[0m19:23:21.497896 [debug] [Thread-4 (]: Finished running node model.ttc_analytics.get_routes
+[0m19:23:21.558370 [debug] [Thread-1 (]: SQL status: OK in 0.124 seconds
+[0m19:23:21.559632 [debug] [Thread-1 (]: On model.ttc_analytics.get_route_stops: Close
+[0m19:23:21.560070 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'da809e2e-5a86-4333-b973-f65fb428709b', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C877E3EC30>]}
+[0m19:23:21.560518 [info ] [Thread-1 (]: 9 of 10 OK created sql table model main.get_route_stops ........................ [[32mOK[0m in 1.25s]
+[0m19:23:21.561050 [debug] [Thread-1 (]: Finished running node model.ttc_analytics.get_route_stops
+[0m19:23:21.562056 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:23:21.562296 [debug] [MainThread]: On master: BEGIN
+[0m19:23:21.562506 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m19:23:21.563033 [debug] [MainThread]: SQL status: OK in 0.001 seconds
+[0m19:23:21.563260 [debug] [MainThread]: On master: COMMIT
+[0m19:23:21.563469 [debug] [MainThread]: Using duckdb connection "master"
+[0m19:23:21.563680 [debug] [MainThread]: On master: COMMIT
+[0m19:23:21.564026 [debug] [MainThread]: SQL status: OK in 0.000 seconds
+[0m19:23:21.564255 [debug] [MainThread]: On master: Close
+[0m19:23:21.564518 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m19:23:21.564722 [debug] [MainThread]: Connection 'create_analytics_main' was properly closed.
+[0m19:23:21.564906 [debug] [MainThread]: Connection 'list_analytics_main' was properly closed.
+[0m19:23:21.565086 [debug] [MainThread]: Connection 'model.ttc_analytics.get_route_stops' was properly closed.
+[0m19:23:21.565267 [debug] [MainThread]: Connection 'model.ttc_analytics.get_routes' was properly closed.
+[0m19:23:21.565443 [debug] [MainThread]: Connection 'model.ttc_analytics.route_shapes_lookup' was properly closed.
+[0m19:23:21.565626 [debug] [MainThread]: Connection 'model.ttc_analytics.route_shapes' was properly closed.
+[0m19:23:21.565890 [info ] [MainThread]: 
+[0m19:23:21.566227 [info ] [MainThread]: Finished running 10 table models in 0 hours 0 minutes and 20.04 seconds (20.04s).
+[0m19:23:21.567700 [debug] [MainThread]: Command end result
+[0m19:23:21.586349 [debug] [MainThread]: Wrote artifact WritableManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\manifest.json
+[0m19:23:21.588533 [debug] [MainThread]: Wrote artifact SemanticManifest to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\semantic_manifest.json
+[0m19:23:21.593266 [debug] [MainThread]: Wrote artifact RunExecutionResult to C:\Users\Adam White\Desktop\ttc-analytics-hub\warehouse\target\run_results.json
+[0m19:23:21.593499 [info ] [MainThread]: 
+[0m19:23:21.593866 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m19:23:21.594226 [info ] [MainThread]: 
+[0m19:23:21.594625 [info ] [MainThread]: Done. PASS=10 WARN=0 ERROR=0 SKIP=0 NO-OP=0 TOTAL=10
+[0m19:23:21.595401 [debug] [MainThread]: Command `dbt run` succeeded at 19:23:21.595311 after 20.85 seconds
+[0m19:23:21.595682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C879210230>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C875762990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001C800043A10>]}
+[0m19:23:21.595954 [debug] [MainThread]: Flushing usage events
+[0m19:23:21.987759 [debug] [MainThread]: An error was encountered while trying to flush usage events

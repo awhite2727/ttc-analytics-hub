@@ -28,7 +28,8 @@ select_trip AS (
 
 select_stops AS (
     SELECT  DISTINCT t.trip_id,
-            st.stop_id
+            st.stop_id,
+            st.stop_sequence
     FROM select_trip t
     JOIN "analytics"."main"."stg_stop_times" st ON t.trip_id = st.trip_id
 )
@@ -37,7 +38,8 @@ SELECT  DISTINCT t.route_id,
         s2.stop_id,
         s2.stop_name,
         s2.stop_lat,
-        s2.stop_lon
+        s2.stop_lon,
+        s.stop_sequence
 
 FROM select_trip t
 JOIN select_stops s ON t.trip_id = s.trip_id
