@@ -8,7 +8,7 @@ def get_vehicles(route_id: str = Query(None), direction_id: int = Query(None)):
     cursor = db.get_cursor()
     
     query = """
-        SELECT vehicle_id, latitude, longitude, bearing, vehicle_label 
+        SELECT vehicle_id, route_id, trip_id, latitude, longitude, bearing, vehicle_label 
         FROM realtime_vehicles
         WHERE route_id = ?
     """
@@ -26,6 +26,8 @@ def get_vehicles(route_id: str = Query(None), direction_id: int = Query(None)):
             },
             "properties": {
                 "vehicle_id": row['vehicle_id'],
+                "route_id": row['route_id'],
+                "trip_id": row['trip_id'],
                 "label": row['vehicle_label'],
                 "bearing": row['bearing'],
                 "arrow_bearing": (row['bearing']+90) % 360

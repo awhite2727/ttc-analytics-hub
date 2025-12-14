@@ -42,83 +42,48 @@ def get_route_stats(route_id: str):
 
 @router.get("/stop/{stop_id}/predictions")
 def get_stop_predictions(stop_id: str):
-    """
-    Popup: Click a Stop -> See next buses.
-    Joins 'realtime_predictions' with 'realtime_vehicles' (to get bus label).
-    """
     cursor = db.get_cursor()
-    
-    # Get next 5 predictions for this stop
+    # FIX: JOIN trips table for route_id fallback
+    # FIX: Use date_diff for accurate minutes calculation
     query = """
         SELECT 
             p.trip_id,
-            v.route_id,
-            v.vehicle_label,
+            COALESCE(v.route_id, t.route_id, 'Unknown') as route_id,
+            COALESCE(v.vehicle_label, v.vehicle_id, 'Scheduled') as vehicle_label,
             p.arrival_time,
-            (epoch(p.arrival_time) - epoch(current_timestamp)) / 60 as minutes_away,
+            CAST(date_diff('second', current_timestamp, p.arrival_time) / 60 AS INTEGER) as minutes_away,
             p.delay
         FROM realtime_predictions p
         LEFT JOIN realtime_vehicles v ON p.trip_id = v.trip_id
+        LEFT JOIN stg_trips t ON p.trip_id = t.trip_id
         WHERE p.stop_id = ? 
           AND p.arrival_time > current_timestamp
         ORDER BY p.arrival_time ASC
         LIMIT 5
     """
-    
     rows = cursor.execute(query, (stop_id,)).fetchall()
-    
-    results = []
-    for r in rows:
-        results.append({
-            "trip_id": r[0],
-            "route_id": r[1] or "Unknown",
-            "vehicle_label": r[2] or "Unknown",
-            "arrival_time": r[3],
-            "minutes_away": int(r[4]),
-            "delay_seconds": r[5]
-        })
-        
-    return {"stop_id": stop_id, "predictions": results}
+    return {"stop_id": stop_id, "predictions": [
+        {"trip_id": r[0], "route_id": r[1], "vehicle_label": r[2], "minutes_away": r[4] if r[4]>=0 else 0, "delay_seconds": r[5]}
+        for r in rows
+    ]}
 
 @router.get("/vehicle/{vehicle_id}/next-stops")
 def get_vehicle_next_stops(vehicle_id: str):
-    """
-    Popup: Click a Bus -> See where it's going.
-    """
     cursor = db.get_cursor()
-    
-    # 1. Find the trip_id for this vehicle
     trip_res = cursor.execute("SELECT trip_id FROM realtime_vehicles WHERE vehicle_id = ?", (vehicle_id,)).fetchone()
+    if not trip_res: raise HTTPException(status_code=404, detail="Vehicle inactive")
     
-    if not trip_res:
-        raise HTTPException(status_code=404, detail="Vehicle not found or not active")
-        
-    trip_id = trip_res[0]
-
-    # 2. Get predictions for this trip
     query = """
         SELECT 
-            p.stop_id,
+            p.stop_id, 
             s.stop_name, 
-            p.arrival_time,
-            (epoch(p.arrival_time) - epoch(current_timestamp)) / 60 as minutes_away
+            CAST(date_diff('second', current_timestamp, p.arrival_time) / 60 AS INTEGER)
         FROM realtime_predictions p
-        LEFT JOIN stg_stops s ON p.stop_id = s.stop_id
-        WHERE p.trip_id = ? 
-          AND p.arrival_time > current_timestamp
-        ORDER BY p.stop_sequence ASC
-        LIMIT 5
+        LEFT JOIN stops s ON p.stop_id = s.stop_id
+        WHERE p.trip_id = ? AND p.arrival_time > current_timestamp
+        ORDER BY p.stop_sequence ASC LIMIT 5
     """
-    
-    rows = cursor.execute(query, (trip_id,)).fetchall()
-    
-    next_stops = []
-    for r in rows:
-        next_stops.append({
-            "stop_id": r[0],
-            "stop_name": r[1] or f"Stop {r[0]}", # Fallback if stops table missing
-            "arrival_time": r[2],
-            "minutes_away": int(r[3])
-        })
-
-    return {"vehicle_id": vehicle_id, "trip_id": trip_id, "next_stops": next_stops}
+    rows = cursor.execute(query, (trip_res[0],)).fetchall()
+    return {"vehicle_id": vehicle_id, "next_stops": [
+        {"stop_id": r[0], "stop_name": r[1] or r[0], "minutes_away": r[2] if r[2]>=0 else 0} for r in rows
+    ]}

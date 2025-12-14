@@ -68,18 +68,16 @@ async def update_vehicle_positions():
                                 trip_id = tu.trip.trip_id
                                 
                                 for stu in tu.stop_time_update:
-                                    arr_time = datetime.fromtimestamp(stu.arrival.time) if stu.HasField('arrival') else None
-                                    dep_time = datetime.fromtimestamp(stu.departure.time) if stu.HasField('departure') else None
-                                    
-                                    if arr_time or dep_time:
-                                        prediction_rows.append((
-                                            trip_id,
-                                            stu.stop_id,
-                                            stu.stop_sequence,
-                                            arr_time,
-                                            dep_time,
-                                            stu.arrival.delay if stu.HasField('arrival') else 0
-                                        ))
+                                    if stu.HasField('arrival'):
+                                        arr_time = datetime.fromtimestamp(stu.arrival.time)
+
+                                        if arr_time:
+                                            prediction_rows.append((
+                                                trip_id,
+                                                stu.stop_id,
+                                                stu.stop_sequence,
+                                                arr_time
+                                            ))
 
                     if snapshot_rows or prediction_rows:
                         cursor = db.con.cursor()
@@ -105,8 +103,8 @@ async def update_vehicle_positions():
                         cursor.execute("DELETE FROM realtime_predictions")
                         cursor.executemany("""
                             INSERT INTO realtime_predictions
-                            (trip_id, stop_id, stop_sequence, arrival_time, departure_time, delay, timestamp)
-                            VALUES (?, ?, ?, ?, ?, ?, current_timestamp)
+                            (trip_id, stop_id, stop_sequence, arrival_time, timestamp)
+                            VALUES (?, ?, ?, ?, current_timestamp)
                         """, prediction_rows)
 
                         cursor.execute("COMMIT")

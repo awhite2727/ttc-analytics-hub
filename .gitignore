@@ -7,3 +7,4 @@ warehouse/analytics.duckdb.wal
 warehouse/logs/
 warehouse/target/
 warehouse/venv2/
+frontend-react/node_modules/

@@ -41,8 +41,6 @@ class Database:
                 stop_id VARCHAR,
                 stop_sequence INTEGER,
                 arrival_time TIMESTAMP,
-                departure_time TIMESTAMP,
-                delay INTEGER, -- seconds
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         """)
