@@ -1,31 +1,26 @@
 from fastapi import APIRouter, Query
 from api.db import db
+from functools import lru_cache
 
 router = APIRouter()
-"""
-@router.get("/directions")
-def get_directions(route_id: str):
+
+@lru_cache(maxsize=1)
+def get_cached_routes():
     cursor = db.get_cursor()
-    query = 
-        SELECT direction_id, trip_name 
-        FROM route_shapes_lookup 
-        WHERE route_id = ?
-        ORDER BY direction_id
-    
-    df = cursor.execute(query, [route_id]).df()
-    return df.to_dict(orient="records")
-"""
+
+    query = """
+        SELECT DISTINCT CAST(route_id AS INTEGER) AS route_id, route_long_name, route_color
+        FROM stg_routes
+        ORDER BY route_id ASC
+    """
+
+    columns = ["route_id", "route_long_name", "route_color"]
+    results = [dict(zip(columns, row)) for row in cursor.execute(query).fetchall()]
+    return results
 
 @router.get("/route_list")
 def get_route_list():
-    cursor = db.get_cursor()
-    query = """
-        SELECT DISTINCT cast(route_id AS integer) AS route_id, route_long_name 
-        FROM stg_routes 
-        ORDER BY route_id ASC
-    """
-    df = cursor.execute(query).df()
-    return df.to_dict(orient="records")
+    return get_cached_routes()
 
 @router.get("/routes")
 def get_routes(route_id: str = Query(None), direction_id: int = Query(None)):

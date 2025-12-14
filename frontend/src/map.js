@@ -27,17 +27,18 @@ map.on('load', async () => {
         map.addImage('arrow-icon', image);
     });
 
-    // 0. Setup Dashboard UI (The top-right stats box)
+    // Setup Dashboard UI (The top-right stats box)
     createStatsOverlay();
 
-    // 1. Setup Layers
+    // Setup Layers
     setupMapLayers();
 
-    // 2. Interactivity
-    setupInteractions();
-
-    // 3. UI
+    // Populate Route Select
     await populateRouteSelect();
+
+    // Interactivity
+    setupInteractions();
+    
 });
 
 function createStatsOverlay() {
@@ -124,7 +125,7 @@ function setupMapLayers() {
         'id': 'Vehicles-outline',
         'type': 'circle',
         'source': 'ttc-vehicles',
-        'paint': { 'circle-radius': 24, 'circle-color': '#000', 'circle-opacity': 1} // Made slightly smaller/transparent
+        'paint': { 'circle-radius': 24, 'circle-color': '#000', 'circle-opacity': 1}
     });
     map.addLayer({
         'id': 'vehicles-layer',
